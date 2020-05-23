@@ -1,0 +1,15 @@
+﻿.pizza-logo {
+    display: flex;
+    align-items: center;
+}
+
+.pizza-logo__img {
+    width: 50px;
+    height: 50px;
+}
+
+.pizza-logo__title {
+    font-family: $_fontFamily;
+    color: red;
+    font-size: 18px;
+}
