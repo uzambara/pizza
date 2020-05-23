@@ -30,12 +30,17 @@
         <Content Include="ClientApp\jest-ignore-import.js" />
         <Content Include="ClientApp\jest.config.js" />
         <TypeScriptCompile Include="ClientApp\src\components\index.ts" />
-        <TypeScriptCompile Include="ClientApp\src\components\pizza-header-menu\pizza-header-menu.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-card\pizza-card.tsx" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-header\pizza-header.tsx" />
-        <Content Include="ClientApp\src\components\pizza-header-menu\pizza-header-menu.scss" />
+        <Content Include="ClientApp\src\app.scss" />
+        <Content Include="ClientApp\src\components\pizza-card\pizza-card.scss" />
         <Content Include="ClientApp\src\components\pizza-header\pizza-header.scss" />
         <Content Include="ClientApp\src\components\pizza-logo\pizza-logo.scss" />
         <Content Include="ClientApp\src\constants.scss" />
+        <Content Include="ClientApp\src\images\menu\comments.png" />
+        <Content Include="ClientApp\src\images\menu\drinks.png" />
+        <Content Include="ClientApp\src\images\menu\pizza.png" />
+        <Content Include="ClientApp\src\images\shared\burg.png" />
         <Content Include="ClientApp\src\images\shared\logo.png" />
         <Content Include="ClientApp\src\index.html" />
         <Content Include="ClientApp\src\main.scss" />
@@ -52,8 +57,17 @@
         <None Include="ClientApp\src\redux\reducers\index.ts" />
         <None Include="ClientApp\src\routing\index.ts" />
         <None Include="ClientApp\src\routing\routing.ts" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-link\pizza-link.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\pizza\get-all-request.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\pizza\get-all-response.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\pizza\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\images\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\images\menu\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\images\shared\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\models-remote\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\models-remote\pizza.ts" />
+        <TypeScriptCompile Include="ClientApp\src\services\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\services\pizza.service.ts" />
     </ItemGroup>
 
     <ItemGroup>
@@ -68,15 +82,14 @@
 
     <ItemGroup>
       <Folder Include="AppStart" />
-      <Folder Include="ClientApp\src\contratcs" />
       <Folder Include="ClientApp\src\enums" />
       <Folder Include="ClientApp\src\factories" />
       <Folder Include="ClientApp\src\hocs" />
       <Folder Include="ClientApp\src\hooks" />
+      <Folder Include="ClientApp\src\images\pizzas" />
       <Folder Include="ClientApp\src\models" />
       <Folder Include="ClientApp\src\redux\actions" />
       <Folder Include="ClientApp\src\redux\selectors" />
-      <Folder Include="ClientApp\src\services" />
       <Folder Include="ClientApp\src\utils" />
       <Folder Include="ClientApp\src\validators" />
       <Folder Include="Controllers" />
