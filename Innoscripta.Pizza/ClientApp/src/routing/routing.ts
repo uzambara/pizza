@@ -3,4 +3,5 @@
     public static PizzaMenu = "/";
     public static DrinksMenu = "/drinks-menu";
     public static Comments = "/comments";
+    public static Cart = "/cart";
 }
