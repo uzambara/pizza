@@ -1,8 +1,13 @@
 ﻿.wrapper {
     box-shadow: 0 -2px 52px 1px rgba(148, 145, 148, 0.68);
     background-color: #ffffff;
-    position: relative;
     padding: 5px 5px;
+    z-index: $_headerZindex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
 }
 
 .header {
@@ -29,26 +34,30 @@
     height: 20px;
 }
 
-.menu-list {
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    z-index: -1;
+.menu-list-wrapper {
+    display: flex;
+    top: 60px;
     list-style: none;
-    top: -200px;
-    border-bottom: 1px solid black;
-    transition: top 0.4s linear;
+    z-index: $_menuListZindex;
+    right: -100vw;
+    transition: right 0.4s linear;
     background-color: #ffffff;
     position: absolute;
-    width: calc(100% - 20px);
-    flex-direction: column;
-    overflow: hidden;
-    display: flex;
+    width: 100%;
     padding: 10px;
+    flex-direction: column;
+    box-shadow: 2px 0 1px 0 rgba(148, 145, 148, 0.68);
 }
 
-.menu-list--opened {
-    top: 60px;
+.menu-list-wrapper--opened {
+    right: 0;
+}
+
+.menu-list {
+    flex-direction: column;
+    display: flex;
+    margin: 0;
+    padding: 10px;
 }
 
 .menu-item {
@@ -82,4 +91,85 @@
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: 25px 25px;
+}
+
+.cart {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+    padding: 10px 15px;
+    min-width: 40px;
+}
+
+.delimiter {
+    display: block;
+    height: 1px;
+    width: calc(100% - 10px);
+    background-color: #000000;
+    margin-bottom: 10px;
+}
+
+.buttons-wrapper {
+    display: flex;
+}
+
+.sign-in-item {
+    margin-right: 15px;
+}
+
+@media screen and (min-width: $_tableSizeLimit) {
+    .wrapper {
+        display: flex;
+    }
+
+    .menu-toggle-button,
+    .phone {
+        display: none;
+    }
+
+    .menu-list-wrapper {
+        position: unset;
+        width: auto;
+        border-bottom: none;
+        margin: 0 0 0 20px;
+        align-items: center;
+        flex-grow: 1;
+        flex-direction: row;
+        box-shadow: none;
+    }
+
+    .menu-list {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        flex-grow: 1;
+    }
+
+    .menu-item {
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+
+    .cart {
+        position: relative;
+        width: fit-content;
+        padding-left: 40px;
+        border-radius: 5px;
+        flex-shrink: 0;
+    }
+
+    .delimiter {
+        display: none;
+    }
+
+    .sign-in-item {
+        justify-self: flex-end;
+        flex-shrink: 0;
+    }
+
+    .buttons-wrapper {
+        margin-right: 15px;
+    }
 }
