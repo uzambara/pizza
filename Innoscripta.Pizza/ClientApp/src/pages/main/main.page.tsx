@@ -17,10 +17,10 @@ export function MainPageComponent(props: IMainPageProps) {
     useEffect(() => {
         ProductService.GetAll().then(response => setProducts(response.items));
     },[]);
-    return <main className={cn(styles.wrapper, className)}>
+    return <>
         <h2 className={styles.header}>Hot pizza</h2>
         <PizzaProductList items={products}/>
-    </main>
+    </>
 }
 
 export const MainPage = memo(withPageWrapper<IMainPageProps>(MainPageComponent));
