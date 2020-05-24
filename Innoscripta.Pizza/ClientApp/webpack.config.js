@@ -103,7 +103,17 @@ const fontsLoaders = () => {
 };
 
 const plugins = () => {
-    const base = [
+    const base = [];
+    if(isDev) {
+        base.push(new CopyWebpackPlugin([
+            {
+                from: path.resolve(__dirname, 'images'),
+                to: path.resolve(__dirname, 'build/images')
+            }
+        ]));
+    }
+
+    base.push(
         new HTMLWebpackPlugin({
             template: './index.html',
             minify: {
@@ -111,16 +121,10 @@ const plugins = () => {
             }
         }),
         new CleanWebpackPlugin(),
-        // new CopyWebpackPlugin([
-        //     {
-        //         from: path.resolve(__dirname, 'src/favicon.ico'),
-        //         to: path.resolve(__dirname, 'dist')
-        //     }
-        // ]),
         new MiniCssExtractPlugin({
             filename: filename('css')
         })
-    ];
+    );
 
     if (isProd) {
         base.push(new BundleAnalyzerPlugin())
