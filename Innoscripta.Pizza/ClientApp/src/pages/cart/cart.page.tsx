@@ -4,7 +4,7 @@ import {IPageProps} from "../page-props";
 import {withPageWrapper} from "../../hocs";
 import {useSelector} from "react-redux";
 import {cartSelectors} from "../../redux/selectors";
-import {PizzaCartItem} from "../../components/pizza-cart-item/pizza-cart-item";
+import {PizzaCartItem} from "../../components";
 
 export interface ICartPageProps extends IPageProps {
 }
