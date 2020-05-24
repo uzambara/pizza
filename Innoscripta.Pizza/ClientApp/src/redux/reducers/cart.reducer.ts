@@ -18,7 +18,7 @@ const cartItem = cartItemFactory.createCartItem({
 });
 
 const initialState: ICartState = {
-    items: [cartItem],
+    items: {7: cartItem},
     totalPrice: 0
 };
 
