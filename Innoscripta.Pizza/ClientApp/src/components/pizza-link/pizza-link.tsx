@@ -1,4 +1,4 @@
-﻿import React, {PropsWithChildren} from "react";
+﻿import React, {memo, PropsWithChildren} from "react";
 import {Link} from "react-router-dom";
 
 export interface IPizzaLinkProps {
@@ -6,7 +6,9 @@ export interface IPizzaLinkProps {
     className?: string
 }
 
-export function PizzaLink(props: PropsWithChildren<IPizzaLinkProps>) {
+function PizzaLinkComponent(props: PropsWithChildren<IPizzaLinkProps>) {
     const {children, href, className} = props;
     return <Link to={href} className={className}>{children}</Link>
-};
+}
+
+export const PizzaLink = memo(PizzaLinkComponent);
