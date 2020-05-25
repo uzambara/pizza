@@ -1,0 +1,59 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0 10px 5px;
+    border-bottom: 1px solid lightgray;
+}
+
+.counter-and-name-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-grow: 1;
+}
+
+.product-name {
+    font-family: $_fontFamily;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.product-type-image {
+    width: 35px;
+    height: 35px;
+    margin-right: 15px;
+}
+
+.product-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.counter {
+    margin-right: 20px;
+}
+
+.price {
+    font-family: $_fontFamily;
+    font-size: 18px;
+}
+
+.delete-button {
+    border: none;
+    background-color: #ffffff;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+@media screen and (min-width: $_tableSizeLimit) {
+    .wrapper {
+        min-height: 100px;
+    }
+
+    .counter-and-name-wrapper {
+        flex-direction: row;
+        align-items: center;
+    }
+}
