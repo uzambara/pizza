@@ -1,7 +1,6 @@
 ﻿import memoize from "memoizee"
 import {CartItemsMap} from "../redux/reducers";
 
-
 const calcTotalPrice = memoize((cart: CartItemsMap): number => {
     console.log("calc");
     let result = 0;
