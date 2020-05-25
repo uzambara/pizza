@@ -1,5 +1,4 @@
 ﻿import React, {memo, useEffect, useState} from "react";
-import cn from "classnames";
 import * as styles from "./main.page.scss";
 import {IPageProps} from "../page-props";
 import {withPageWrapper} from "../../hocs";
@@ -7,11 +6,10 @@ import {IProductModelRemote} from "../../models-remote";
 import {ProductService} from "../../services";
 import {PizzaProductList} from "../../components";
 
-export interface IMainPageProps extends IPageProps{
+export interface IMainPageProps extends IPageProps {
 }
 
 export function MainPageComponent(props: IMainPageProps) {
-    const {className} = props;
     const [products, setProducts] = useState<IProductModelRemote[]>([]);
 
     useEffect(() => {
