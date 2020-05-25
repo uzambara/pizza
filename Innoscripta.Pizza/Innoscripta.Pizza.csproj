@@ -39,9 +39,13 @@
         <Content Include="ClientApp\jest.config.js" />
         <TypeScriptCompile Include="ClientApp\src\components\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-cart-item\pizza-cart-item.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-cart-list\pizza-cart-list.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-counter\pizza-counter.tsx" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-header\pizza-header.tsx" />
         <Content Include="ClientApp\src\app.scss" />
         <Content Include="ClientApp\src\components\pizza-cart-item\pizza-cart-item.scss" />
+        <Content Include="ClientApp\src\components\pizza-cart-list\pizza-cart-list.scss" />
+        <Content Include="ClientApp\src\components\pizza-counter\pizza-counter.scss" />
         <Content Include="ClientApp\src\components\pizza-header\pizza-header.scss" />
         <Content Include="ClientApp\src\components\pizza-logo\pizza-logo.scss" />
         <Content Include="ClientApp\src\constants.scss" />
@@ -63,6 +67,7 @@
         <Content Remove="ClientApp\src\store\**" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-link\pizza-link.tsx" />
         <TypeScriptCompile Include="ClientApp\src\contratcs\product\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\hooks\use-counter.ts" />
         <TypeScriptCompile Include="ClientApp\src\images\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\images\menu\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\images\shared\index.ts" />
@@ -73,6 +78,9 @@
         <TypeScriptCompile Include="ClientApp\src\routing\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\routing\routing.ts" />
         <TypeScriptCompile Include="ClientApp\src\services\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\services\local-storage.service.ts" />
+        <TypeScriptCompile Include="ClientApp\src\utils\cart.utils.ts" />
+        <TypeScriptCompile Include="ClientApp\src\utils\product-type.utils.ts" />
     </ItemGroup>
 
     <ItemGroup>
@@ -90,12 +98,10 @@
       <Folder Include="ClientApp\src\enums" />
       <Folder Include="ClientApp\src\factories" />
       <Folder Include="ClientApp\src\hocs" />
-      <Folder Include="ClientApp\src\hooks" />
       <Folder Include="ClientApp\src\images\pizzas" />
       <Folder Include="ClientApp\src\models" />
       <Folder Include="ClientApp\src\redux\actions" />
       <Folder Include="ClientApp\src\redux\selectors" />
-      <Folder Include="ClientApp\src\utils" />
       <Folder Include="ClientApp\src\validators" />
       <Folder Include="Controllers" />
     </ItemGroup>
