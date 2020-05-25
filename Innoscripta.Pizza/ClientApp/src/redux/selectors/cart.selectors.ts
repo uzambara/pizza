@@ -1,9 +1,15 @@
-﻿import {IGlobalState} from "../reducers";
+﻿import {CartItemsMap, IGlobalState} from "../reducers";
+import {cartUtils} from "../../utils";
 
-export function selectCart(state: IGlobalState) {
-    return state.cart
+export function selectCartItemsMap(state: IGlobalState): CartItemsMap {
+    return state.cart.items
+}
+
+export function selectTotalPrice(state: IGlobalState) {
+    return cartUtils.calcTotalPrice(state.cart.items);
 }
 
 export const cartSelectors = {
-    selectCart
+    selectCartItemsMap,
+    selectTotalPrice
 };
