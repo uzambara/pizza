@@ -10,6 +10,12 @@ import {
     settingsActions
 } from "./settings.actions";
 
+import {
+    productsActions,
+    ProductsActions,
+    ProductsActionsType
+} from "./products.actions";
+
 export {
     CartAction,
     CartActionType,
@@ -19,5 +25,9 @@ export {
     SettingsAction,
     SettingsActionType,
     IChangeCurrencyType,
-    settingsActions
+    settingsActions,
+
+    ProductsActions,
+    ProductsActionsType,
+    productsActions
 }
