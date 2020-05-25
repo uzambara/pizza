@@ -1,6 +1,5 @@
 ﻿.wrapper {
     width: 300px;
-    min-height: 300px;
     border: 1px solid $_bordersColor;
     border-radius: 5px;
     padding-bottom: 10px;
@@ -22,8 +21,8 @@
 }
 
 .pizza-image {
-    width: 150px;
-    height: auto;
+    width: auto;
+    height: 95px;
 }
 
 .pizza-name {
