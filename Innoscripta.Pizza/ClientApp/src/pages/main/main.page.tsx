@@ -1,22 +1,17 @@
-﻿import React, {memo, useEffect, useState} from "react";
+﻿import React, {memo} from "react";
 import * as styles from "./main.page.scss";
 import {IPageProps} from "../page-props";
 import {withPageWrapper} from "../../hocs";
-import {IProductModelRemote} from "../../models-remote";
-import {ProductService} from "../../services";
 import {PizzaProductList} from "../../components";
+import {IMenuPageProps} from "../menu-page-props";
 
-export interface IMainPageProps extends IPageProps {
+export interface IMainPageProps extends IPageProps, IMenuPageProps {
 }
 
 export function MainPageComponent(props: IMainPageProps) {
-    const [products, setProducts] = useState<IProductModelRemote[]>([]);
-
-    useEffect(() => {
-        ProductService.GetAll().then(response => setProducts(response.items));
-    },[]);
+    const {products, header} = props;
     return <>
-        <h2 className={styles.header}>Hot pizza</h2>
+        <h2 className={styles.header}>{header}</h2>
         <PizzaProductList items={products}/>
     </>
 }
