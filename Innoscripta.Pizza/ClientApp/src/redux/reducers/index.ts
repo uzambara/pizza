@@ -1,5 +1,5 @@
 ﻿import {combineReducers} from "redux";
-import {cartReducer, ICartState} from "./cart.reducer";
+import {cartReducer, ICartState, CartItemsMap} from "./cart.reducer";
 import {ISettingsState, settingsReducer} from "./settings.reducer";
 
 export interface IGlobalState {
@@ -11,3 +11,7 @@ export const rootReducer = combineReducers<IGlobalState>({
     cart: cartReducer,
     settings: settingsReducer
 });
+
+export {
+    CartItemsMap
+}

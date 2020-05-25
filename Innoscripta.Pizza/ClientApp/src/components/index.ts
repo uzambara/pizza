@@ -6,6 +6,7 @@ import {PizzaSelect, ISelectItem} from "./controls/pizza-select/pizza-select";
 import {PizzaProductCard} from "./pizza-product-card/pizza-product-card";
 import {PizzaCartItem} from "./pizza-cart-item/pizza-cart-item";
 import {PizzaProductList} from "./pizza-product-list/pizza-product-list";
+import {PizzaCartList} from "./pizza-cart-list/pizza-cart-list";
 
 export {
     PizzaLogo,
@@ -16,5 +17,6 @@ export {
     ISelectItem,
     PizzaProductCard,
     PizzaCartItem,
-    PizzaProductList
+    PizzaProductList,
+    PizzaCartList
 }
