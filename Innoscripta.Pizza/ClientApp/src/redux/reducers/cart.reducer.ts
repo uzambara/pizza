@@ -1,7 +1,7 @@
 ﻿import {CartAction, CartActionType} from "../actions";
 import {ICartItem} from "../../models";
-import {ProductType} from "../../enums";
-import {cartItemFactory} from "../../factories";
+import {LocalStorageService} from "../../services";
+import {localStorageKeys} from "../../constants";
 
 export type CartItemsMap = {[id: number]: ICartItem};
 
@@ -9,17 +9,8 @@ export interface ICartState {
     items: CartItemsMap
 }
 
-const cartItem = cartItemFactory.createCartItem({
-    id: 7,
-    description: "<b>Ingredients:</b> pizza sauce, Mozzarella and Parmesan cheeses, champignons, bacon, pepperoni sausage, tomatoes, chicken breast, garlic, red onion, greens.",
-    img: "/images/pizzas/pizzaman.png",
-    name: "Pizzaman",
-    price: 5,
-    type: ProductType.Pizza
-});
-
 const initialState: ICartState = {
-    items: {7: cartItem}
+    items: LocalStorageService.getItem<CartItemsMap>(localStorageKeys.CART_ITEMS) || {}
 };
 
 export const cartReducer = (state: ICartState = initialState, action: CartAction): ICartState => {
@@ -33,7 +24,7 @@ export const cartReducer = (state: ICartState = initialState, action: CartAction
             } else {
                 items[newItem.productId] = newItem;
             }
-
+            LocalStorageService.setItem(localStorageKeys.CART_ITEMS, items);
             return {
                 items
             };
@@ -41,6 +32,7 @@ export const cartReducer = (state: ICartState = initialState, action: CartAction
             const id = action.payload;
             let newItems = {...state.items};
             delete newItems[id];
+            LocalStorageService.setItem(localStorageKeys.CART_ITEMS, newItems);
             return {
                 ...state,
                 items: newItems
@@ -53,7 +45,7 @@ export const cartReducer = (state: ICartState = initialState, action: CartAction
             itemForChange.count += diff;
 
             items[id] = itemForChange;
-
+            LocalStorageService.setItem(localStorageKeys.CART_ITEMS, items);
             return {...state, items};
         }
         default:
