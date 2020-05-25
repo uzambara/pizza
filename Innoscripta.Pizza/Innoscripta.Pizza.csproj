@@ -61,11 +61,6 @@
         <Content Remove="ClientApp\public\**" />
         <None Remove="ClientApp\src\store\**" />
         <Content Remove="ClientApp\src\store\**" />
-        <None Include="ClientApp\src\pages\index.ts" />
-        <None Include="ClientApp\src\redux\middlewares\index.ts" />
-        <None Include="ClientApp\src\redux\reducers\index.ts" />
-        <None Include="ClientApp\src\routing\index.ts" />
-        <None Include="ClientApp\src\routing\routing.ts" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-link\pizza-link.tsx" />
         <TypeScriptCompile Include="ClientApp\src\contratcs\product\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\images\index.ts" />
@@ -73,7 +68,10 @@
         <TypeScriptCompile Include="ClientApp\src\images\shared\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\models-remote\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\models-remote\pizza.ts" />
+        <TypeScriptCompile Include="ClientApp\src\pages\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\pages\page-props.ts" />
+        <TypeScriptCompile Include="ClientApp\src\routing\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\routing\routing.ts" />
         <TypeScriptCompile Include="ClientApp\src\services\index.ts" />
     </ItemGroup>
 
