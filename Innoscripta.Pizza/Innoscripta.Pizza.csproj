@@ -80,13 +80,18 @@
         <TypeScriptCompile Include="ClientApp\src\models-remote\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\models-remote\pizza.ts" />
         <TypeScriptCompile Include="ClientApp\src\pages\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\pages\menu-page-props.ts" />
         <TypeScriptCompile Include="ClientApp\src\pages\page-props.ts" />
+        <TypeScriptCompile Include="ClientApp\src\redux\actions\products.actions.ts" />
+        <TypeScriptCompile Include="ClientApp\src\redux\reducers\products.reducer.ts" />
+        <TypeScriptCompile Include="ClientApp\src\redux\selectors\products.selectors.ts" />
         <TypeScriptCompile Include="ClientApp\src\routing\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\routing\routing.ts" />
         <TypeScriptCompile Include="ClientApp\src\services\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\services\local-storage.service.ts" />
         <TypeScriptCompile Include="ClientApp\src\utils\cart.utils.ts" />
         <TypeScriptCompile Include="ClientApp\src\utils\product-type.utils.ts" />
+        <TypeScriptCompile Include="ClientApp\src\utils\products.utils.ts" />
     </ItemGroup>
 
     <ItemGroup>
@@ -106,8 +111,6 @@
       <Folder Include="ClientApp\src\hocs" />
       <Folder Include="ClientApp\src\images\pizzas" />
       <Folder Include="ClientApp\src\models" />
-      <Folder Include="ClientApp\src\redux\actions" />
-      <Folder Include="ClientApp\src\redux\selectors" />
       <Folder Include="ClientApp\src\validators" />
       <Folder Include="Controllers" />
     </ItemGroup>
