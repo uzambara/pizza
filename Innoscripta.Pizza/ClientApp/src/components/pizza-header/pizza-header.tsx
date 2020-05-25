@@ -8,12 +8,13 @@ import {CurrencyType} from "../../enums";
 import * as styles from "./pizza-header.scss";
 import {useSizeChanged} from "../../hooks";
 import {useDispatch, useSelector} from "react-redux";
-import {cartSelectors, settingsSelectors} from "../../redux/selectors";
+import {settingsSelectors} from "../../redux/selectors";
 import {settingsActions} from "../../redux/actions";
 
 export interface IPizzaHeaderProps {
     className?: string,
-    onHeightChanged: (height: number) => void
+    onHeightChanged: (height: number) => void,
+    totalPrice: number
 }
 
 const currencies: ISelectItem[] = [
@@ -22,13 +23,16 @@ const currencies: ISelectItem[] = [
 ];
 
 function PizzaHeaderComponent(props: IPizzaHeaderProps) {
-    const {className, onHeightChanged} = props;
-    const [menuOpened, setMenuOpened] = useState(true);
+    const {className, onHeightChanged, totalPrice} = props;
+    const [menuOpened, setMenuOpened] = useState(false);
     const {ref: headerRef, size: headerSize} = useSizeChanged();
     const currencyType = useSelector(settingsSelectors.selectCurrencyType);
     const dispatch = useDispatch();
-    const changeCurrencyType =
-        useCallback((currencyType: CurrencyType) => dispatch(settingsActions.changeCurrencyType(currencyType)), []);
+
+    const changeCurrencyType = useCallback((currencyType: CurrencyType) => {
+        dispatch(settingsActions.changeCurrencyType(currencyType));
+    }, []);
+
     useEffect(() => {
         onHeightChanged(headerSize.height);
     }, [headerSize]);
@@ -36,8 +40,6 @@ function PizzaHeaderComponent(props: IPizzaHeaderProps) {
     const onMenuClick = () => {
         setMenuOpened(!menuOpened);
     };
-
-    const cart = useSelector(cartSelectors.selectCart);
 
     return <header className={cn(styles.wrapper, className)} ref={headerRef}>
         <div className={styles.header}>
@@ -80,7 +82,7 @@ function PizzaHeaderComponent(props: IPizzaHeaderProps) {
                 />
             </div>
         </div>
-        <PizzaCart className={styles.cart} totalPrice={cart.totalPrice} currencyType={currencyType}/>
+        <PizzaCart className={styles.cart} totalPrice={totalPrice} currencyType={currencyType}/>
     </header>
 }
 
