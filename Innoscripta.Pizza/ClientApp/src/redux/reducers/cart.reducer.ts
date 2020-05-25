@@ -3,9 +3,10 @@ import {ICartItem} from "../../models";
 import {ProductType} from "../../enums";
 import {cartItemFactory} from "../../factories";
 
+export type CartItemsMap = {[id: number]: ICartItem};
+
 export interface ICartState {
-    items: {[id: number]: ICartItem},
-    totalPrice: number
+    items: CartItemsMap
 }
 
 const cartItem = cartItemFactory.createCartItem({
@@ -18,8 +19,7 @@ const cartItem = cartItemFactory.createCartItem({
 });
 
 const initialState: ICartState = {
-    items: {7: cartItem},
-    totalPrice: 0
+    items: {7: cartItem}
 };
 
 export const cartReducer = (state: ICartState = initialState, action: CartAction): ICartState => {
@@ -35,9 +35,27 @@ export const cartReducer = (state: ICartState = initialState, action: CartAction
             }
 
             return {
-                items,
-                totalPrice: state.totalPrice + newItem.price
+                items
             };
+        case CartActionType.RemoveItem: {
+            const id = action.payload;
+            let newItems = {...state.items};
+            delete newItems[id];
+            return {
+                ...state,
+                items: newItems
+            };
+        }
+        case CartActionType.ChangeItemCount: {
+            const {id, diff} = action.payload;
+            const items = {...state.items};
+            let itemForChange: ICartItem = {...(items[id])};
+            itemForChange.count += diff;
+
+            items[id] = itemForChange;
+
+            return {...state, items};
+        }
         default:
             return state;
     }
