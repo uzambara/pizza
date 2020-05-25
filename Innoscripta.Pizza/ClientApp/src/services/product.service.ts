@@ -2,7 +2,7 @@
 import {ProductType} from "../enums";
 import {IGetAllResponse} from "../contratcs/product";
 
-const PIZZAS: IProductModelRemote[] = [
+const PRODUCTS_MOCK: IProductModelRemote[] = [
     {
         id: 1,
         description: "<b>Ingredients:</b> pizza sauce, Mozzarella and Parmesan cheeses, champignons, bacon, pepperoni sausage, tomatoes, chicken breast, garlic, red onion, greens.",
@@ -59,13 +59,45 @@ const PIZZAS: IProductModelRemote[] = [
         name: "Four cheeses",
         price: 7,
         type: ProductType.Pizza
+    },
+    {
+        id: 8,
+        description: "",
+        img: "/images/drinks/coca-cola.png",
+        name: "Coca-cola",
+        price: 2,
+        type: ProductType.Drink
+    },
+    {
+        id: 9,
+        description: "",
+        img: "/images/drinks/fanta.png",
+        name: "Fanta",
+        price: 2,
+        type: ProductType.Drink
+    },
+    {
+        id: 10,
+        description: "",
+        img: "/images/drinks/cranberry-juice.png",
+        name: "Cranberry juice",
+        price: 3,
+        type: ProductType.Drink
+    },
+    {
+        id: 11,
+        description: "",
+        img: "/images/drinks/bon-aqua.png",
+        name: "Bon aqua",
+        price: 1,
+        type: ProductType.Drink
     }
 ];
 
 export class ProductService {
     public static async  GetAll(): Promise<IGetAllResponse> {
         const result: IGetAllResponse = {} as IGetAllResponse;
-        result.items = PIZZAS;
+        result.items = PRODUCTS_MOCK;
 
         return result;
     }

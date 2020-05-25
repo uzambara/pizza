@@ -26,6 +26,10 @@
     <ItemGroup>
         <!-- Don't publish the SPA source files, but do show them in the project files list -->
         <Content Remove="$(SpaRoot)**" />
+        <Content Include="ClientApp\images\drinks\bon-aqua.png" />
+        <Content Include="ClientApp\images\drinks\coca-cola.png" />
+        <Content Include="ClientApp\images\drinks\cranberry-juice.png" />
+        <Content Include="ClientApp\images\drinks\fanta.png" />
         <Content Include="ClientApp\images\pizzas\bavarian.png" />
         <Content Include="ClientApp\images\pizzas\chicken-julienne.png" />
         <Content Include="ClientApp\images\pizzas\dragon.png" />
