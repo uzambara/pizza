@@ -66,6 +66,8 @@
         <None Remove="ClientApp\src\store\**" />
         <Content Remove="ClientApp\src\store\**" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-link\pizza-link.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\constants\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\constants\local-storage-keys.ts" />
         <TypeScriptCompile Include="ClientApp\src\contratcs\product\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\hooks\use-counter.ts" />
         <TypeScriptCompile Include="ClientApp\src\images\index.ts" />
