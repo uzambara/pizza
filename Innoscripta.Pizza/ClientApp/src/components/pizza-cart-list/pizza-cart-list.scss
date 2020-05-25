@@ -1,0 +1,22 @@
+﻿.cart-list {
+    list-style: none;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.total-price {
+    font-family: $_fontFamily;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+@media screen and (min-width: $_tableSizeLimit) {
+    .cart-list {
+        max-width: $_tableSizeLimit;
+        margin: 0 auto;
+    }
+}
