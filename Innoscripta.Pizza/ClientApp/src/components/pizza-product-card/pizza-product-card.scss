@@ -4,6 +4,9 @@
     border: 1px solid $_bordersColor;
     border-radius: 5px;
     padding-bottom: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .wrapper:hover {
@@ -32,6 +35,8 @@
     padding: 5px 15px;
     display: flex;
     flex-wrap: wrap;
+    align-content: space-between;
+    flex-grow: 1;
 }
 
 .pizza-description {
