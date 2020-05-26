@@ -71,7 +71,7 @@ function PizzaHeaderComponent(props: IPizzaHeaderProps) {
             </ul>
             <div className={styles.delimiter}/>
             <div className={styles.buttonsWrapper}>
-                <PizzaButton onClick={null} type={"submit"} className={styles.signInItem}>
+                <PizzaButton onClick={null} style={"submit"} className={styles.signInItem}>
                     Sign In
                 </PizzaButton>
                 <PizzaSelect

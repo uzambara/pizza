@@ -15,9 +15,9 @@ function PizzaCounterComponent(props: IPizzaCounterProps) {
     const {value, onIncrease, onDecrease, className} = props;
 
     return <div className={cn(styles.wrapper, className)}>
-        <PizzaButton onClick={onIncrease} type={"submit"} className={styles.button}>+</PizzaButton>
+        <PizzaButton onClick={onIncrease} style={"submit"} className={styles.button}>+</PizzaButton>
         <span className={styles.counterValue}>{value}</span>
-        <PizzaButton onClick={onDecrease} type={"submit"} className={styles.button}>–</PizzaButton>
+        <PizzaButton onClick={onDecrease} style={"submit"} className={styles.button}>–</PizzaButton>
     </div>
 }
 

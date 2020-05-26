@@ -37,7 +37,7 @@ function PizzaProductCardComponent(props: IPizzaCardProps) {
                 className={styles.pizzaPrice}
                 dangerouslySetInnerHTML={{__html: currencyUtils.getPriceString(price, currencyType)}}
             />
-            <PizzaButton onClick={addToCart} type="submit">Buy</PizzaButton>
+            <PizzaButton onClick={addToCart} style="submit">Buy</PizzaButton>
         </div>
     </section>
 }
