@@ -52,6 +52,8 @@
         <Content Include="ClientApp\src\components\pizza-counter\pizza-counter.scss" />
         <Content Include="ClientApp\src\components\pizza-header\pizza-header.scss" />
         <Content Include="ClientApp\src\components\pizza-logo\pizza-logo.scss" />
+        <Content Include="ClientApp\src\components\pizza-modal\pizza-modal.scss" />
+        <Content Include="ClientApp\src\components\pizza-order-form\pizza-order-form.scss" />
         <Content Include="ClientApp\src\constants.scss" />
         <Content Include="ClientApp\src\images\menu\comments.png" />
         <Content Include="ClientApp\src\images\menu\drinks.png" />
@@ -70,10 +72,13 @@
         <None Remove="ClientApp\src\store\**" />
         <Content Remove="ClientApp\src\store\**" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-link\pizza-link.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-modal\pizza-modal.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-order-form\pizza-order-form.tsx" />
         <TypeScriptCompile Include="ClientApp\src\constants\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\constants\local-storage-keys.ts" />
         <TypeScriptCompile Include="ClientApp\src\contratcs\product\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\hooks\use-counter.ts" />
+        <TypeScriptCompile Include="ClientApp\src\hooks\use-trigger.ts" />
         <TypeScriptCompile Include="ClientApp\src\images\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\images\menu\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\images\shared\index.ts" />
