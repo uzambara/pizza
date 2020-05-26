@@ -1,0 +1,31 @@
+﻿.order-form {
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding: 20px 30px;
+    width: 100%;
+    box-shadow: $_boxShadow;
+    background-color: #ffffff;
+}
+
+.label {
+    font-family: $_fontFamily;
+    flex-basis: 100%;
+    margin-bottom: 10px;
+}
+
+.field {
+    border-radius: 5px;
+    padding: 10px 15px;
+    border: 1px solid #bdbdbd;
+    margin-bottom: 10px;
+    width: 100%;
+
+    &--textarea {
+        min-height: 100px;
+    }
+}
+
+.submit-button {
+    margin-top: 15px;
+}
