@@ -43,7 +43,8 @@
     transition: right 0.4s linear;
     background-color: #ffffff;
     position: absolute;
-    width: 100%;
+    max-width: 400px;
+    min-width: $_mobileSizeLimit;
     padding: 10px;
     flex-direction: column;
     box-shadow: 2px 0 1px 0 rgba(148, 145, 148, 0.68);
@@ -118,7 +119,7 @@
     margin-right: 15px;
 }
 
-@media screen and (min-width: $_tableSizeLimit) {
+@media screen and (min-width: $_desktopSizeLimit) {
     .wrapper {
         display: flex;
     }
@@ -137,6 +138,8 @@
         flex-grow: 1;
         flex-direction: row;
         box-shadow: none;
+        max-width: initial;
+        min-width: initial;
     }
 
     .menu-list {
