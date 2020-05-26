@@ -3,3 +3,24 @@
     font-family: $_fontFamily;
     color: #0860a3;
 }
+
+.order-form-modal-container {
+    justify-content: unset;
+    align-items: unset;
+}
+
+.order-form-modal {
+    margin-top: 70px;
+}
+
+@media screen and (min-width: 500px) {
+    .order-form-modal-container {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .order-form-modal {
+        margin-top: 0;
+        max-width: 500px;
+    }
+}
