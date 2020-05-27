@@ -25,6 +25,8 @@ function CartPageComponent(props: ICartPageProps) {
     const submitOrder = async (data: IMakeOrderFormData) => {
         dispatch(orderActions.makeOrderRemote(data));
     };
+
+    const cartItems = cartUtils.cartItemsMapToArray(cartItemsMap);
     return <>
         <PizzaModal
             isOpen={modalIsOpen}
@@ -33,10 +35,15 @@ function CartPageComponent(props: ICartPageProps) {
         >
             <PizzaOrderForm onSubmit={submitOrder} onCancel={setClose}/>
         </PizzaModal>
-        <PizzaCartList totalPrice={totalPrice} currencyType={currencyType} cartItemsMap={cartItemsMap}/>
-        <div className={styles.buyButtonWrapper}>
-            <PizzaButton className={styles.buyButton} style="submit" onClick={setOpen} type="button">Buy</PizzaButton>
-        </div>
+        {
+            cartItems.length > 0 &&
+            <>
+                <PizzaCartList totalPrice={totalPrice} currencyType={currencyType} cartItems={cartItems}/>
+                <div className={styles.buyButtonWrapper}>
+                    <PizzaButton className={styles.buyButton} style="submit" onClick={setOpen} type="button">Buy</PizzaButton>
+                </div>
+            </>
+        }
     </>
 }
 

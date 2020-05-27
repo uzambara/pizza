@@ -4,27 +4,23 @@ import {CartItemsMap} from "../../redux/reducers";
 import {CurrencyType} from "../../enums";
 import * as styles from "./pizza-cart-list.scss";
 import {currencyUtils} from "../../utils";
+import {ICartItem} from "../../models";
 
 export interface IPizzaCartListProps {
-    cartItemsMap: CartItemsMap,
+    cartItems: ICartItem[],
     totalPrice: number,
     currencyType: CurrencyType
 }
 
 function PizzaCartListComponent(props: IPizzaCartListProps) {
-    const {cartItemsMap, totalPrice, currencyType} = props;
+    const {cartItems, totalPrice, currencyType} = props;
     const priceText = `Total: ${currencyUtils.getPriceString(totalPrice, currencyType)}`;
-
-    const itemKeys = Object.keys(cartItemsMap);
-    if(itemKeys.length == 0) {
-        return null;
-    }
 
     return <ul className={styles.cartList}>
         {
-            itemKeys.map((productId) =>
-                <li className={styles.cartListItem} key={productId}>
-                    <PizzaCartItem key={productId} cartItem={cartItemsMap[productId]} currencyType={currencyType}/>
+            cartItems.map((cartItem) =>
+                <li className={styles.cartListItem} key={cartItem.productId}>
+                    <PizzaCartItem key={cartItem.productId} cartItem={cartItem} currencyType={currencyType}/>
                 </li>)
         }
         <li className={styles.totalPrice} dangerouslySetInnerHTML={{__html: priceText}}/>
