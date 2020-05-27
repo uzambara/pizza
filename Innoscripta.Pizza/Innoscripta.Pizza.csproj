@@ -44,26 +44,44 @@
         <TypeScriptCompile Include="ClientApp\src\components\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-cart-item\pizza-cart-item.tsx" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-cart-list\pizza-cart-list.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-comment-form\pizza-comment-form.tsx" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-counter\pizza-counter.tsx" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-header\pizza-header.tsx" />
         <Content Include="ClientApp\src\app.scss" />
         <Content Include="ClientApp\src\components\pizza-cart-item\pizza-cart-item.scss" />
         <Content Include="ClientApp\src\components\pizza-cart-list\pizza-cart-list.scss" />
+        <Content Include="ClientApp\src\components\pizza-comment-form\pizza-comment-form.scss" />
         <Content Include="ClientApp\src\components\pizza-counter\pizza-counter.scss" />
         <Content Include="ClientApp\src\components\pizza-header\pizza-header.scss" />
         <Content Include="ClientApp\src\components\pizza-logo\pizza-logo.scss" />
         <Content Include="ClientApp\src\components\pizza-modal\pizza-modal.scss" />
         <Content Include="ClientApp\src\components\pizza-order-form\pizza-order-form.scss" />
+        <Content Include="ClientApp\src\components\pizza-stars\pizza-stars.scss" />
+        <Content Include="ClientApp\src\components\pizza-toast\pizza-toast.scss" />
         <Content Include="ClientApp\src\constants.scss" />
+        <Content Include="ClientApp\src\hocs\with-page-wrapper.scss" />
         <Content Include="ClientApp\src\images\menu\comments.png" />
         <Content Include="ClientApp\src\images\menu\drinks.png" />
         <Content Include="ClientApp\src\images\menu\pizza.png" />
         <Content Include="ClientApp\src\images\shared\burg.png" />
         <Content Include="ClientApp\src\images\shared\cart.png" />
         <Content Include="ClientApp\src\images\shared\logo.png" />
+        <Content Include="ClientApp\src\images\shared\pizza-star.png" />
         <Content Include="ClientApp\src\index.html" />
         <Content Include="ClientApp\src\main.scss" />
+        <Content Include="ClientApp\src\mixins.scss" />
+        <Content Include="ClientApp\src\pages\comments\comments.page.scss" />
         <Content Include="ClientApp\src\pages\main\main.page.scss" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-toast\pizza-toast.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\base-response.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\order\make-order-request.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\order\make-order-response.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\order\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\response-code.ts" />
+        <TypeScriptCompile Include="ClientApp\src\models\make-order-form-data.ts" />
+        <TypeScriptCompile Include="ClientApp\src\redux\actions\order.actions.ts" />
+        <TypeScriptCompile Include="ClientApp\src\routing\api-routing.ts" />
         <Content Include="ClientApp\webpack.config.js" />
         <None Remove="$(SpaRoot)**" />
         <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
@@ -74,6 +92,7 @@
         <TypeScriptCompile Include="ClientApp\src\components\pizza-link\pizza-link.tsx" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-modal\pizza-modal.tsx" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-order-form\pizza-order-form.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-stars\pizza-stars.tsx" />
         <TypeScriptCompile Include="ClientApp\src\constants\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\constants\local-storage-keys.ts" />
         <TypeScriptCompile Include="ClientApp\src\contratcs\product\index.ts" />
@@ -82,8 +101,11 @@
         <TypeScriptCompile Include="ClientApp\src\images\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\images\menu\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\images\shared\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\models-remote\comment\comment.ts" />
         <TypeScriptCompile Include="ClientApp\src\models-remote\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\models-remote\pizza.ts" />
+        <TypeScriptCompile Include="ClientApp\src\models\comment.ts" />
+        <TypeScriptCompile Include="ClientApp\src\pages\comments\comments.page.tsx" />
         <TypeScriptCompile Include="ClientApp\src\pages\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\pages\menu-page-props.ts" />
         <TypeScriptCompile Include="ClientApp\src\pages\page-props.ts" />
@@ -94,9 +116,12 @@
         <TypeScriptCompile Include="ClientApp\src\routing\routing.ts" />
         <TypeScriptCompile Include="ClientApp\src\services\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\services\local-storage.service.ts" />
+        <TypeScriptCompile Include="ClientApp\src\services\order.service.ts" />
         <TypeScriptCompile Include="ClientApp\src\utils\cart.utils.ts" />
         <TypeScriptCompile Include="ClientApp\src\utils\product-type.utils.ts" />
         <TypeScriptCompile Include="ClientApp\src\utils\products.utils.ts" />
+        <TypeScriptCompile Include="ClientApp\src\utils\response-handle.utils.ts" />
+        <TypeScriptCompile Include="ClientApp\src\utils\__tests__\cart.utils.test.ts" />
     </ItemGroup>
 
     <ItemGroup>
@@ -110,14 +135,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="AppStart" />
       <Folder Include="ClientApp\src\enums" />
       <Folder Include="ClientApp\src\factories" />
-      <Folder Include="ClientApp\src\hocs" />
       <Folder Include="ClientApp\src\images\pizzas" />
-      <Folder Include="ClientApp\src\models" />
       <Folder Include="ClientApp\src\validators" />
-      <Folder Include="Controllers" />
+      <Folder Include="Migrations" />
     </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

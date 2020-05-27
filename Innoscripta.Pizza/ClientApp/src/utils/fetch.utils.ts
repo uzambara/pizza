@@ -1,11 +1,12 @@
-﻿import {IResponseError} from "../models-remote/shared/response-error";
+﻿import {IBaseResponse} from "../contratcs";
 
 const defaultGetOptions: RequestInit = {
     method: "GET"
 };
 
 const defaultPostOptions: RequestInit = {
-    method: "POST"
+    method: "POST",
+    headers: {'content-type': 'application/json'}
 };
 
 function getURLSearchParamsFromObject (queryObject: {[key: string]: any}) {
@@ -16,59 +17,34 @@ function getURLSearchParamsFromObject (queryObject: {[key: string]: any}) {
     return result;
 }
 
-async function get<TResponse extends IResponseError>(url: string, queryObject?: {[key: string]: any}, requestInit?: RequestInit): Promise<TResponse> {
+async function get<TResponse extends IBaseResponse>(url: string, queryObject?: {[key: string]: any}, requestInit?: RequestInit): Promise<TResponse> {
     const searchParams = getURLSearchParamsFromObject(queryObject);
     const requestUrl = url + '?' + searchParams.toString();
-    try {
-        let response = await fetch(requestUrl, {
-            ...defaultGetOptions,
-            ...requestInit
-        });
+    let response = await fetch(requestUrl, {
+        ...defaultGetOptions,
+        ...requestInit
+    });
 
-        if(response.ok) {
-            return (await response.json() as TResponse);
-        }
-
-        console.log(`${url}`, `Сервер ответил с ошибкой: ${response.statusText} url: ${requestUrl}`);
-        return {
-            error: response.statusText,
-            body: await response.text(),
-            url: url
-        } as any;
-    } catch (error) {
-        return {
-            error: error,
-            url: url
-        } as any;
+    if(response.ok) {
+        return (await response.json() as TResponse);
     }
 
+    console.log(`${url}`, `Сервер ответил с ошибкой: ${response.statusText} url: ${requestUrl}`);
 }
 
-async function post<TResponse extends IResponseError>(url: string, data?: any, requestInit?: RequestInit): Promise<TResponse | IResponseError> {
-    try {
-        let body = data ? JSON.stringify(data) : null;
-        let response = await fetch(url, {
-            ...defaultPostOptions,
-            body: body,
-            ...requestInit
-        });
+async function post<TResponse extends IBaseResponse>(url: string, data?: any, requestInit?: RequestInit): Promise<TResponse> {
+    let body = data ? JSON.stringify(data) : null;
+    let response = await fetch(url, {
+        ...defaultPostOptions,
+        body: body,
+        ...requestInit
+    });
 
-        if(response.ok) {
-            return (await response.json() as TResponse);
-        }
-
-        console.log(`${url}`, `Сервер ответил с ошибкой: ${response.statusText} url: ${url}`);
-        return {
-            error: response.statusText,
-            body: await response.text(),
-            url: url
-        } as any;
-    } catch (error) {
-        return {
-            error: error,
-            url: url
-        } as any;
+    if(response.ok) {
+        return (await response.json() as TResponse);
     }
+
+    console.log(`${url}`, `Сервер ответил с ошибкой: ${response.statusText} url: ${url}`);
 }
 
 export const fetchUtil = {

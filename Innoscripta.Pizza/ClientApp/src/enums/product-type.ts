@@ -1,4 +1,4 @@
 ﻿export enum ProductType {
-    Pizza,
-    Drink
+    Pizza = 1,
+    Drink = 2
 }

@@ -16,6 +16,8 @@ import {
     ProductsActionsType
 } from "./products.actions";
 
+import { orderActions } from "./order.actions";
+
 export {
     CartAction,
     CartActionType,
@@ -29,5 +31,7 @@ export {
 
     ProductsActions,
     ProductsActionsType,
-    productsActions
+    productsActions,
+
+    orderActions
 }

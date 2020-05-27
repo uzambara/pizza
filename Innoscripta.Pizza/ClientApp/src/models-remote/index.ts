@@ -1,7 +1,7 @@
 ﻿import {IProductModelRemote} from "./product/product";
-import {IResponseError} from "./shared/response-error";
+import {ICommentModelRemote} from "./comment/comment";
 
 export {
     IProductModelRemote,
-    IResponseError
+    ICommentModelRemote
 }

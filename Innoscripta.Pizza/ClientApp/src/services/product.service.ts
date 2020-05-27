@@ -1,6 +1,8 @@
 ﻿import {IProductModelRemote} from "../models-remote";
 import {ProductType} from "../enums";
-import {IGetAllResponse} from "../contratcs/product";
+import {IGetAllProductsResponse} from "../contratcs/product";
+import {fetchUtil} from "../utils";
+import {ApiRouting} from "../routing";
 
 const PRODUCTS_MOCK: IProductModelRemote[] = [
     {
@@ -95,10 +97,8 @@ const PRODUCTS_MOCK: IProductModelRemote[] = [
 ];
 
 export class ProductService {
-    public static async  GetAll(): Promise<IGetAllResponse> {
-        const result: IGetAllResponse = {} as IGetAllResponse;
-        result.items = PRODUCTS_MOCK;
-
-        return result;
+    public static async  GetAll(): Promise<IGetAllProductsResponse> {
+        const result: IGetAllProductsResponse = {} as IGetAllProductsResponse;
+        return  await fetchUtil.get<IGetAllProductsResponse>(ApiRouting.Product.getAll);
     }
 }

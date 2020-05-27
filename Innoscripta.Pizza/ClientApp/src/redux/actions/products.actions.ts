@@ -10,8 +10,8 @@ export enum ProductsActionsType {
 
 const fetchProductsRemote = () => async (dispatch: Dispatch) => {
     const response = await ProductService.GetAll();
-    if(response.items.length > 0) {
-        dispatch(AddProducts(response.items));
+    if(response.products.length > 0) {
+        dispatch(AddProducts(response.products));
     }
 };
 

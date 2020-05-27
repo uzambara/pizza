@@ -9,6 +9,16 @@ import {PizzaProductList} from "./pizza-product-list/pizza-product-list";
 import {PizzaCartList} from "./pizza-cart-list/pizza-cart-list";
 import {PizzaModal} from "./pizza-modal/pizza-modal";
 import {PizzaOrderForm} from "./pizza-order-form/pizza-order-form";
+import {PizzaCommentForm} from "./pizza-comment-form/pizza-comment-form";
+import {PizzaStars} from "./pizza-stars/pizza-stars";
+import {Toasts} from "./pizza-toast/pizza-toast";
+
+interface IReduxFormFieldProps {
+    input: {
+        onChange,
+        value
+    }
+}
 
 export {
     PizzaLogo,
@@ -22,5 +32,9 @@ export {
     PizzaProductList,
     PizzaCartList,
     PizzaModal,
-    PizzaOrderForm
+    PizzaOrderForm,
+    PizzaCommentForm,
+    PizzaStars,
+    Toasts,
+    IReduxFormFieldProps
 }

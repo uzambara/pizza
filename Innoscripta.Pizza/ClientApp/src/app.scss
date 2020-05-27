@@ -4,3 +4,10 @@
 
 .header {
 }
+
+.toast-container {
+    position: fixed !important;
+    top: 80px !important;
+    right: 0 !important;
+    z-index: 1001 !important;
+}

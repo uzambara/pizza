@@ -1,5 +1,6 @@
 ﻿import {IProductModelRemote} from "../models-remote";
 import {ICartItem} from "../models";
+import {IOrderItemModel} from "../contratcs/order";
 
 function createCartItem(product: IProductModelRemote): ICartItem {
     return {
@@ -12,6 +13,15 @@ function createCartItem(product: IProductModelRemote): ICartItem {
     }
 }
 
+function createOrderItem(cartItem: ICartItem): IOrderItemModel {
+    return {
+        count: cartItem.count,
+        price: cartItem.price,
+        productId: cartItem.productId
+    }
+}
+
 export const cartItemFactory = {
-    createCartItem
+    createCartItem,
+    createOrderItem
 };

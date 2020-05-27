@@ -1,4 +1,5 @@
 ﻿export interface IPageProps {
     className?:  string,
-    paddingTop: number
+    paddingTop: number,
+    header?: string
 }

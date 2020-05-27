@@ -53,16 +53,37 @@ const cssLoaders = (...extra) => {
     return loaders
 };
 
+const localNameCssLoaders = (...extra) => {
+    const loaders = [
+        { loader: "style-loader" },
+        {
+            loader: "css-loader",
+            options: {
+                modules: {
+                    mode: "local",
+                    localIdentName: "[local]"
+                }
+            }
+        }
+    ];
+
+    if (extra) {
+        loaders.push(...extra)
+    }
+
+    return loaders
+};
+
 const sassLoaders = () => {
     var extra = [];
-    if(isProd) {
-        extra.push({
-            loader: 'postcss-loader',
-            options: {
-                plugins: [autoprefixer]
-            }
-        });
-    }
+
+    extra.push({
+        loader: 'postcss-loader',
+        options: {
+            plugins: [autoprefixer]
+        }
+    });
+
     extra.push({
         loader: 'sass-loader',
         options: {
@@ -74,6 +95,29 @@ const sassLoaders = () => {
 
     return loaders;
 };
+
+const localNameSassLoaders = () => {
+    var extra = [];
+
+    extra.push({
+        loader: 'postcss-loader',
+        options: {
+            plugins: [autoprefixer]
+        }
+    });
+
+    extra.push({
+        loader: 'sass-loader',
+        options: {
+            data: '@import "./src/constants.scss";',
+            includePaths:[__dirname, 'src']
+        }
+    });
+    const loaders = localNameCssLoaders(...extra);
+
+    return loaders;
+};
+
 
 const imagesLoaders = () => {
     const loaders = [
@@ -104,14 +148,13 @@ const fontsLoaders = () => {
 
 const plugins = () => {
     const base = [];
-    if(isDev) {
-        base.push(new CopyWebpackPlugin([
-            {
-                from: path.resolve(__dirname, 'images'),
-                to: path.resolve(__dirname, 'build/images')
-            }
-        ]));
-    }
+
+    base.push(new CopyWebpackPlugin([
+        {
+            from: path.resolve(__dirname, 'images'),
+            to: path.resolve(__dirname, 'build/images')
+        }
+    ]));
 
     base.push(
         new HTMLWebpackPlugin({
@@ -126,9 +169,9 @@ const plugins = () => {
         })
     );
 
-    if (isProd) {
-        base.push(new BundleAnalyzerPlugin())
-    }
+    // if (isProd) {
+    //     base.push(new BundleAnalyzerPlugin())
+    // }
 
     return base
 };
@@ -165,8 +208,19 @@ module.exports = function(env, args) {
                     use: cssLoaders()
                 },
                 {
+                    test: /\.css$/,
+                    include: /node_modules/,
+                    use: localNameCssLoaders()
+                },
+                {
                     test: /\.scss$/,
+                    exclude: [/pizza-toast/],
                     use: sassLoaders()
+                },
+                {
+                    test: /\.scss$/,
+                    include: [/pizza-toast/],
+                    use: localNameSassLoaders()
                 },
                 {
                     test: /\.(png|jpg|gif|svg|webp)$/i,

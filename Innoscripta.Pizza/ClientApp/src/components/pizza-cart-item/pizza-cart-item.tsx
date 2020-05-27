@@ -1,8 +1,7 @@
-﻿import React, {memo, useCallback, useEffect} from "react";
+﻿import React, {memo, useCallback} from "react";
 import {ICartItem} from "../../models";
 import * as styles from "./pizza-cart-item.scss";
 import {PizzaCounter} from "../pizza-counter/pizza-counter";
-import {useCounter} from "../../hooks";
 import {currencyUtils} from "../../utils";
 import {CurrencyType} from "../../enums";
 import {useDispatch} from "react-redux";

@@ -1,0 +1,24 @@
+﻿.stars-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.stars-item {
+    height: 34px;
+    width: 34px;
+    overflow: hidden;
+    margin-right: 3px;
+}
+
+
+.stars-image {
+    transition: margin-top 0.25s linear;
+    margin-top: -34px;
+    cursor: pointer;
+}
+
+.stars-image--selected {
+    margin-top: 0;
+}

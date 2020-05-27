@@ -1,0 +1,36 @@
+﻿.toast-wrapper {
+    &.Toastify__toast--info,
+    &.Toastify__toast--success,
+    &.Toastify__toast--error {
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+
+    &.Toastify__toast--info {
+        background-color: #ADD8E6;
+        color: #000000;
+    }
+    &.Toastify__toast--success {
+        background-color: #90EE90;
+        color: #000000;
+    }
+    &.Toastify__toast--error {
+        background-color: #CD5C5C;
+    }
+}
+
+.pizza-toast {
+    font-family: $_fontFamily;
+
+    .title {
+        margin: 0 0 10px;
+        font-size: 14px;
+        font-weight: normal;
+    }
+
+    .text {
+        padding: 0;
+        font-size: 12px;
+        opacity: 0.8;
+    }
+}

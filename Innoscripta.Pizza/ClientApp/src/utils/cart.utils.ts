@@ -1,5 +1,6 @@
 ﻿import memoize from "memoizee";
 import {CartItemsMap} from "../redux/reducers";
+import {ICartItem} from "../models";
 
 const calcTotalPrice = memoize((cart: CartItemsMap): number => {
     console.log("calc");
@@ -12,6 +13,11 @@ const calcTotalPrice = memoize((cart: CartItemsMap): number => {
     return result;
 });
 
+function cartItemsMapToArray(cartItemsMap: CartItemsMap): ICartItem[] {
+    return Object.values(cartItemsMap);
+}
+
 export const cartUtils = {
-    calcTotalPrice
+    calcTotalPrice,
+    cartItemsMapToArray
 };

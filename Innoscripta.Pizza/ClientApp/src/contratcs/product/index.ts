@@ -1,7 +1,7 @@
-﻿import {IGetAllResponse} from "./get-all-response";
-import {IGetAllRequest} from "./get-all-request";
+﻿import { IGetAllProductsResponse } from "./get-all-products-response";
+import { IGetAllProductsRequest } from "./get-all-products-request";
 
 export {
-    IGetAllResponse,
-    IGetAllRequest
+    IGetAllProductsResponse,
+    IGetAllProductsRequest
 }

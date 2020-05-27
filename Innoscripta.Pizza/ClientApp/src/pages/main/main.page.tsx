@@ -5,15 +5,14 @@ import {withPageWrapper} from "../../hocs";
 import {PizzaProductList} from "../../components";
 import {IMenuPageProps} from "../menu-page-props";
 
-export interface IMainPageProps extends IPageProps, IMenuPageProps {
+export interface IMainPageProps extends IMenuPageProps {
 }
 
 export function MainPageComponent(props: IMainPageProps) {
-    const {products, header} = props;
+    const {products} = props;
     return <>
-        <h2 className={styles.header}>{header}</h2>
         <PizzaProductList items={products}/>
     </>
 }
 
-export const MainPage = memo(withPageWrapper<IMainPageProps>(MainPageComponent));
+export const MainPage = memo(withPageWrapper<IPageProps & IMainPageProps>(MainPageComponent));

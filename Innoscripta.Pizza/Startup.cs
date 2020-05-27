@@ -1,10 +1,15 @@
+using System.Linq;
+using AutoMapper;
+using FluentValidation.AspNetCore;
+using Innoscripta.Pizza.AppStart.ServicesConfiguration;
+using Innoscripta.Pizza.Data.Repositories;
+using Innoscripta.Pizza.Factories;
+using Innoscripta.Pizza.Services.Implementations;
+using Innoscripta.Pizza.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,15 +30,20 @@ namespace Innoscripta.Pizza
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services
-                .AddControllers()
-                .AddNewtonsoftJson(options =>
-                {
-                    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
-                    options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-                });
-
+            services.ConfigureControllers();
+            services.ConfigureDatabase(Configuration);
+            services.AddAutoMapper(typeof(Startup));
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
+
+            services.AddScoped(typeof(BaseRepository<>));
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IUserService, UserService>();
+
+            services.AddTransient<OrderEntityFactory>();
+            services.AddTransient<OrderItemFactory>();
+            services.AddTransient<UserEntityFactory>();
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,  ILogger<Startup> logger)
@@ -61,6 +71,20 @@ namespace Innoscripta.Pizza
                     await context.Response.WriteAsync(exceptionHandlerFeature.Error.ToString());
                 });
             });
+
+            if (env.IsDevelopment())
+            {
+                // подключаем CORS
+                app.UseCors(builder =>
+                {
+                    var credentials = Configuration.GetSection("AllowedHosts").Get<string[]>();
+                    builder
+                        .WithOrigins(credentials.ToArray())
+                        .AllowCredentials()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            }
 
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
