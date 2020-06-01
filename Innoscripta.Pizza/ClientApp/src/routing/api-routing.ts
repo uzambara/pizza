@@ -1,5 +1,5 @@
 ﻿const rootPath = process.env.NODE_ENV == 'development'
-    ? "http://localhost:5000/"
+    ? "http://localhost:33881/"
     : "/";
 
 export class ApiRouting {
@@ -8,6 +8,8 @@ export class ApiRouting {
     private static accountRoute: string = ApiRouting.apiPrefix + "account/";
     private static productRoute: string = ApiRouting.apiPrefix + "product/";
     private static orderRoute: string = ApiRouting.apiPrefix + "order/";
+    private static commentRoute: string = ApiRouting.apiPrefix + "comment/";
+    private static userRoute: string = ApiRouting.apiPrefix + "user/";
 
     public static readonly Account = {
         login: ApiRouting.Root + ApiRouting.accountRoute + "login",
@@ -22,5 +24,15 @@ export class ApiRouting {
 
     public static readonly Order = {
         create: ApiRouting.Root + ApiRouting.orderRoute + "create",
+    };
+
+    public static readonly Comment = {
+        create: ApiRouting.Root + ApiRouting.commentRoute + "create",
+        get: ApiRouting.Root + ApiRouting.commentRoute + "get",
+    };
+
+    public static readonly User = {
+        orderHistory: ApiRouting.Root + ApiRouting.userRoute + "order-history",
+        statistic: ApiRouting.Root + ApiRouting.userRoute + "statistic",
     };
 }

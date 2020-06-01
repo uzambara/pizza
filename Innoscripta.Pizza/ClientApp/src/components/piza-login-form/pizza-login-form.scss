@@ -1,0 +1,46 @@
+﻿.login-form {
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding: 20px 30px;
+    width: 100%;
+    box-shadow: $_boxShadow;
+    background-color: #ffffff;
+}
+
+.title,
+.label,
+.input {
+    font-family: $_fontFamily;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-weight: normal;
+}
+
+.label {
+    margin-bottom: 10px;
+}
+
+.input {
+    border-radius: 5px;
+    padding: 10px 15px;
+    border: 1px solid #bdbdbd;
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.submit-button {
+    margin-right: 15px;
+}
+
+.cancel-button {
+    margin-left: auto;
+}
+
+.registration-button {
+    margin-top: 20px;
+    width: 100%;
+}

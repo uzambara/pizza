@@ -1,32 +1,51 @@
-﻿import React from "react";
+﻿import React, {useEffect} from "react";
 import {reduxForm, Field, InjectedFormProps} from "redux-form";
 import {IComment} from "../../models";
-import * as styles from "./pizza-comment-form.scss";
 import cn from "classnames";
-import {PizzaButton} from "..";
-import {PizzaStars} from "../pizza-stars/pizza-stars";
+import {PizzaButton, PizzaStars} from "..";
+import * as styles from "./pizza-comment-form.scss";
+import {useSelector} from "react-redux";
+import {languageSelectors} from "../../redux/selectors";
+import {Subject} from "rxjs";
 
-function PizzaCommentFormComponent(props: InjectedFormProps<IComment>) {
-    const {handleSubmit} = props;
-    return <form onSubmit={handleSubmit} className={styles.form}>
-        <h3 className={styles.title}>Make us better</h3>
+interface IPizzaFormProps {
+    className?: string,
+    resetForm$?: Subject<boolean>
+}
+
+function PizzaCommentFormComponent(props: InjectedFormProps<IComment> & IPizzaFormProps) {
+    const {handleSubmit, className, reset, resetForm$} = props;
+    const {
+        Title,
+        AddButton,
+        CommentLabel,
+        NameLabel,
+        PhoneLabel
+    } = useSelector(languageSelectors.selectAddCommentForm);
+    useEffect(() => {
+        resetForm$.subscribe(v => reset());
+        return () => resetForm$.unsubscribe();
+    }, [resetForm$]);
+    return <form onSubmit={handleSubmit} className={cn(styles.form, className)}>
+        <h3 className={styles.title}>{Title}</h3>
         <label className={styles.nameLabel}>
-            Name
+            {NameLabel}
             <Field name="name" component="input" className={styles.input}/>
         </label>
-
         <label className={styles.phoneLabel}>
-            Phone
+            {PhoneLabel}
             <Field name="phone" component="input" className={styles.input}/>
         </label>
 
         <label className={styles.commentLabel}>
-            Comment
-            <Field name="comment" component="textarea" className={cn(styles.input, styles.inputTextarea)}/>
+            {CommentLabel}
+            <Field name="text" component="textarea" className={cn(styles.input, styles.inputTextarea)}/>
         </label>
-        <PizzaButton onClick={() => {}} style="submit" type="submit">Add</PizzaButton>
-        <Field name="stars" component={PizzaStars} className={cn(styles.input, styles.inputTextarea)}/>
+        <div className={styles.starsAndSubmitWrapper}>
+            <PizzaButton className={styles.submitButton} onClick={() => {}} style="submit" type="submit">{AddButton}</PizzaButton>
+            <Field name="stars" component={PizzaStars} className={styles.pizzaStars}/>
+        </div>
     </form>
 }
 
-export const PizzaCommentForm = reduxForm<IComment, any>({form: "PizzaCommentForm"})(PizzaCommentFormComponent);
+export const PizzaCommentForm = reduxForm<IComment, IPizzaFormProps>({form: "PizzaCommentForm"})(PizzaCommentFormComponent);

@@ -12,13 +12,9 @@
     margin-right: 3px;
 }
 
-
 .stars-image {
     transition: margin-top 0.25s linear;
-    margin-top: -34px;
     cursor: pointer;
-}
-
-.stars-image--selected {
-    margin-top: 0;
+    width: 100%;
+    height: auto;
 }

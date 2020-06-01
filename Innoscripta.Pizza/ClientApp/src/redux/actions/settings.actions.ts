@@ -1,7 +1,7 @@
 ﻿import {CurrencyType} from "../../enums";
 
 export type SettingsAction =
-    IChangeCurrencyType
+    IChangeCurrencyType;
 
 
 export enum SettingsActionType {

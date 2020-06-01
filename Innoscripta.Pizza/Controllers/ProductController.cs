@@ -9,7 +9,7 @@ namespace Innoscripta.Pizza.Controllers
 {
     public class ProductController: BaseController
     {
-        private IProductService _productService;
+        private readonly IProductService _productService;
 
         public ProductController(IProductService productService)
         {
@@ -20,7 +20,11 @@ namespace Innoscripta.Pizza.Controllers
         [Route(ApiRoutes.Product.GetAll)]
         public async Task<GetAllProductsResponse> GetAll()
         {
-            return await _productService.GetAllAsync();
+            var products = await _productService.GetAllAsync();
+            return new GetAllProductsResponse()
+            {
+                Products = products
+            };
         }
     }
 }

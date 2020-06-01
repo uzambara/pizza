@@ -15,63 +15,77 @@ namespace Innoscripta.Pizza.Data.Configuration
                 new ProductEntity()
                 {
                     Id = 1,
-                    Description = "<b>Ingredients:</b> pizza sauce, Mozzarella and Parmesan cheeses, champignons, bacon, pepperoni sausage, tomatoes, chicken breast, garlic, red onion, greens.",
+                    DescriptionEng = "<b>Ingredients:</b> pizza sauce, Mozzarella and Parmesan cheeses, champignons, bacon, pepperoni sausage, tomatoes, chicken breast, garlic, red onion, greens.",
+                    DescriptionRu = "<b>Состав</b> пицца-соус, сыры «Моцарелла» и «Пармезан», шампиньоны, бекон, колбаса пепперони, помидоры, куриная грудка, чеснок, лук красный, зелень.",
                     Img = "/images/pizzas/pizzaman.png",
-                    Name = "Pizzaman",
+                    NameEng = "Pizzaman",
+                    NameRu = "Пиццамен",
                     Price = 4,
                     Type = ProductType.Pizza
                 },
                 new ProductEntity()
                 {
                     Id = 2,
-                    Description = "<b>Ingredients:</b> pizza sauce, Mozzarella cheese, pepperoni sausage, champignons.",
+                    DescriptionEng = "<b>Ingredients:</b> pizza sauce, Mozzarella cheese, pepperoni sausage, champignons.",
+                    DescriptionRu = "<b>Состав</b> пицца-соус, сыр «Моцарелла», колбаса пепперони, шампиньоны.",
                     Img = "/images/pizzas/pepperoni.png",
-                    Name = "Pepperoni",
+                    NameEng = "Pepperoni",
+                    NameRu = "Пепперони",
                     Price = 5,
                     Type = ProductType.Pizza
                 },
                 new ProductEntity()
                 {
                     Id = 3,
-                    Description = "<b>Ingredients:</b> pizza sauce, mozzarella cheese, ham, pineapple.",
+                    DescriptionEng = "<b>Ingredients:</b> pizza sauce, mozzarella cheese, ham, pineapple.",
+                    DescriptionRu = "<b>Состав</b> пицца-соус, сыр «Моцарелла», ветчина, ананасы.",
                     Img = "/images/pizzas/hawaiian.png",
-                    Name = "Hawaiian",
+                    NameEng = "Hawaiian",
+                    NameRu = "Гавайская",
                     Price = 4,
                     Type = ProductType.Pizza
                 },
                 new ProductEntity()
                 {
                     Id = 4,
-                    Description = "<b>Ingredients:</b> pizza sauce, mozzarella cheese, tomatoes.",
+                    DescriptionEng = "<b>Ingredients:</b> pizza sauce, mozzarella cheese, tomatoes.",
+                    DescriptionRu = "<b>Состав</b> пицца-соус, сыр «Моцарелла», помидоры.",
                     Img = "/images/pizzas/margarita.png",
-                    Name = "Margarita",
+                    NameEng = "Margarita",
+                    NameRu = "Маргарита",
                     Price = 4.5m,
                     Type = ProductType.Pizza
                 },
                 new ProductEntity()
                 {
                     Id = 5,
-                    Description = "<b>Ingredients:</b> pizza sauce, mozzarella and parmesan cheeses, ham, mushrooms, pepperoni, jalapenos.",
+                    DescriptionEng = "<b>Ingredients:</b> pizza sauce, mozzarella and parmesan cheeses, ham, mushrooms, pepperoni, jalapenos.",
+                    DescriptionRu = "<b>Состав</b> пицца-соус, сыры «Моцарелла» и «Пармезан», ветчина, шампиньоны, колбаса пепперони, перец халапеньо.",
                     Img = "/images/pizzas/dragon.png",
-                    Name = "Dragon",
+                    NameEng = "Dragon",
+                    NameRu = "Дракон",
                     Price = 5,
                     Type = ProductType.Pizza
                 },
                 new ProductEntity()
                 {
                     Id = 6,
-                    Description = "<b>Ingredients:</b> mustard sauce, Mozzarella cheese, chicken breast, red onion, mushrooms, garlic.",
+                    DescriptionEng = "<b>Ingredients:</b> mustard sauce, Mozzarella cheese, chicken breast, red onion, mushrooms, garlic.",
+                    DescriptionRu = "<b>Состав</b> соус «Горчичный», сыр «Моцарелла» куриная грудка, лук красный, шампиньоны, чеснок.",
                     Img = "/images/pizzas/chicken-julienne.png",
-                    Name = "Chicken julienne",
+                    NameEng = "Chicken julienne",
+                    NameRu = "Куриный жульен",
                     Price = 6.5m,
                     Type = ProductType.Pizza
                 },
                 new ProductEntity()
                 {
                     Id = 7,
-                    Description = "<b>Ingredients:</b> pizza sauce, Mozzarella, Parmesan, Cheddar cheeses, blue noble cheese.",
+                    DescriptionEng = "<b>Ingredients:</b> pizza sauce, Mozzarella, Parmesan, Cheddar cheeses, blue noble cheese.",
+                    DescriptionRu = "<b>Состав</b> пицца-соус, сыры «Моцарелла», «Пармезан», «Чеддер», сыр с голубой благородной плесенью.",
                     Img = "/images/pizzas/four-cheeses.png",
-                    Name = "Four cheeses",
+                    NameEng = "Four cheeses",
+                    NameRu = "Четыре сыра",
                     Price = 7,
                     Type = ProductType.Pizza
                 },
@@ -79,36 +93,44 @@ namespace Innoscripta.Pizza.Data.Configuration
                 new ProductEntity()
                 {
                     Id = 8,
-                    Description = null,
+                    DescriptionEng = null,
+                    DescriptionRu = null,
                     Img = "/images/drinks/coca-cola.png",
-                    Name = "Coca-cola",
+                    NameEng = "Coca-cola",
+                    NameRu = "Кока-кола",
                     Price = 2,
                     Type = ProductType.Drink
                 },
                 new ProductEntity()
                 {
                     Id = 9,
-                    Description = null,
+                    DescriptionEng = null,
+                    DescriptionRu = null,
                     Img = "/images/drinks/fanta.png",
-                    Name = "Fanta",
+                    NameEng = "Fanta",
+                    NameRu = "Фанта",
                     Price = 2,
                     Type = ProductType.Drink
                 },
                 new ProductEntity()
                 {
                     Id = 10,
-                    Description = null,
+                    DescriptionEng = null,
+                    DescriptionRu = null,
                     Img = "/images/drinks/cranberry-juice.png",
-                    Name = "Four cheeses",
+                    NameEng = "Сranberry juice",
+                    NameRu = "Морс",
                     Price = 3,
                     Type = ProductType.Drink
                 },
                 new ProductEntity()
                 {
                     Id = 11,
-                    Description = "",
+                    DescriptionEng = "",
+                    DescriptionRu = null,
                     Img = "/images/drinks/bon-aqua.png",
-                    Name = "Bon aqua",
+                    NameEng = "Bon aqua",
+                    NameRu = "Бонаква",
                     Price = 1,
                     Type = ProductType.Drink
                 }

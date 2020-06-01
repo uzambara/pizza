@@ -1,19 +1,22 @@
 ﻿import {IProductModelRemote} from "../models-remote";
 import {ICartItem} from "../models";
-import {IOrderItemModel} from "../contratcs/order";
+import {IOrderPosition} from "../contratcs/order";
+import {productUtils} from "../utils/products.utils";
+import {LanguageType} from "../enums";
 
-function createCartItem(product: IProductModelRemote): ICartItem {
+function createCartItem(product: IProductModelRemote, languageType: LanguageType): ICartItem {
+    const {name} = productUtils.getNameAndDescription(product, languageType);
     return {
         count: 1,
         imageUrl: product.img,
-        name: product.name,
+        name: name,
         price: product.price,
         productId: product.id,
         productType: product.type
     }
 }
 
-function createOrderItem(cartItem: ICartItem): IOrderItemModel {
+function createOrderPosition(cartItem: ICartItem): IOrderPosition {
     return {
         count: cartItem.count,
         price: cartItem.price,
@@ -23,5 +26,5 @@ function createOrderItem(cartItem: ICartItem): IOrderItemModel {
 
 export const cartItemFactory = {
     createCartItem,
-    createOrderItem
+    createOrderPosition
 };

@@ -60,6 +60,11 @@ namespace Innoscripta.Pizza.Data.Repositories
             return _context.Database.BeginTransaction();
         }
 
+        public void Update(T item)
+        {
+            _context.Entry(item).State = EntityState.Modified;
+        }
+
         public void CommitTransaction()
         {
             _context.Database.CommitTransaction();

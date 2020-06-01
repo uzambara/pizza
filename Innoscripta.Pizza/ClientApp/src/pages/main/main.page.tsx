@@ -1,9 +1,9 @@
 ﻿import React, {memo} from "react";
-import * as styles from "./main.page.scss";
 import {IPageProps} from "../page-props";
 import {withPageWrapper} from "../../hocs";
 import {PizzaProductList} from "../../components";
 import {IMenuPageProps} from "../menu-page-props";
+import * as styles from "./main.page.scss";
 
 export interface IMainPageProps extends IMenuPageProps {
 }

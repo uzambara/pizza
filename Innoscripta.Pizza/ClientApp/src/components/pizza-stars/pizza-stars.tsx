@@ -9,21 +9,45 @@ function selected(idx: number, hoveredIndex: number) {
     return hoveredIndex >= 0 && idx <= hoveredIndex;
 }
 
-function PizzaStarsComponent(props: IReduxFormFieldProps) {
-    const [hoveredIndex, setHoveredIndex] = useState(-1);
+interface PizzaStarsProps extends IReduxFormFieldProps {
+    disable?: boolean,
+    className?: string,
+    size?: number
+}
 
+const defaultImageSize = 34;
+const maxStarsCount = 5;
+function PizzaStarsComponent(props: PizzaStarsProps) {
     const {
-        input: { value: starsCount, onChange }
+        disable,
+        size,
+        className,
+        input: { value, onChange }
     } = props;
-    return <ul className={styles.starsList} onMouseLeave={() => onChange(starsCount)}>
+
+    const [hoveredIndex, setHoveredIndex] = useState(() => isNaN(parseInt(value)) ? -1 : value);
+    const onMouseLeave = () => {
+        if(!disable) {
+            onChange(value);
+            setHoveredIndex(value - 1);
+        }
+    };
+
+    const imgSize = size || defaultImageSize;
+    return <ul className={cn(styles.starsList, className)} onMouseLeave={onMouseLeave}>
         {
-            _.range(5).map((item, idx) => <li key={idx} className={styles.starsItem}>
+            _.range(maxStarsCount).map((item, idx) => <li
+                key={idx}
+                className={styles.starsItem}
+                style={{width: imgSize, height: imgSize}}
+            >
                 <img
-                    onMouseEnter={() => setHoveredIndex(idx)}
-                    onClick={() => onChange(idx + 1)}
+                    onMouseEnter={() => !disable && setHoveredIndex(idx)}
+                    onClick={() => !disable && onChange(idx + 1)}
                     src={Images.Shared.pizzaStar}
                     alt="star"
-                    className={cn(styles.starsImage, selected(idx, hoveredIndex) ? styles.starsImageSelected : "")}
+                    className={cn(styles.starsImage)}
+                    style={selected(idx, hoveredIndex) ? {marginTop: 0} : {marginTop: (imgSize * -1)}}
                 />
             </li>
             )

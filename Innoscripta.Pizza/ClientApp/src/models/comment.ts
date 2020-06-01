@@ -1,6 +1,6 @@
 ﻿export interface IComment {
     name: string,
     phone: string,
-    comment: string,
+    text: string,
     stars: number
 }

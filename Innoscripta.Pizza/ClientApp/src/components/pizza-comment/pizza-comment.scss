@@ -1,0 +1,42 @@
+﻿.wrapper {
+    border: 1px solid $_bordersColor;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #ADD8E6;
+}
+
+.name,
+.text,
+.date {
+    font-family: $_fontFamily;
+}
+
+.name {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.text {
+    flex-basis: 100%;
+}
+
+.date {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.stars {
+    flex-basis: 100%;
+}
+
+@media screen and (min-width: $_mobileSizeLimit){
+    .name {
+        width: initial;
+    }
+}

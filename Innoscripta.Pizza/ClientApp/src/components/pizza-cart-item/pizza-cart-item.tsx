@@ -16,13 +16,13 @@ function PizzaCartItemComponent(props: IPizzaCartItem) {
     const {cartItem, currencyType} = props;
     const {imageUrl, price, count, productId, name} = cartItem;
     const dispatch = useDispatch();
-    const deleteItem = () => dispatch(cartActions.RemoveItem(productId));
+    const deleteItem = () => dispatch(cartActions.removeItem(productId));
 
     const onIncreaseCount = useCallback(() => {
-        dispatch(cartActions.ChangeItemCount(productId, 1));
+        dispatch(cartActions.changeItemCount(productId, 1));
     }, []);
     const onDecreaseCount = useCallback(() => {
-        dispatch(cartActions.ChangeItemCount(productId, -1));
+        dispatch(cartActions.changeItemCount(productId, -1));
     }, []);
 
     return <div className={styles.wrapper}>

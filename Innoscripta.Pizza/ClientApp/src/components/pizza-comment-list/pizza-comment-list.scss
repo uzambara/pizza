@@ -1,0 +1,14 @@
+﻿.comments-list {
+    padding: 0;
+    margin: 0 auto;
+}
+
+.comment {
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: $_desktopSizeLimit){
+    .comments-list {
+        max-width: $_desktopSizeLimit;
+    }
+}

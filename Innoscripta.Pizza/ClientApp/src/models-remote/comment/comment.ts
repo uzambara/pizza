@@ -1,6 +1,6 @@
 ﻿export interface ICommentModelRemote {
     text: string,
     name: string,
-    starts: number,
+    stars: number,
     date: string
 }

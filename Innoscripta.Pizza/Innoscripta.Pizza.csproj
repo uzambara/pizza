@@ -13,6 +13,7 @@
         <PackageReference Include="AutoMapper" Version="9.0.0" />
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
         <PackageReference Include="FluentValidation.AspNetCore" Version="8.6.2" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.4" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.4" />
         <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.4" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.4" />
@@ -42,27 +43,41 @@
         <Content Include="ClientApp\jest-ignore-import.js" />
         <Content Include="ClientApp\jest.config.js" />
         <TypeScriptCompile Include="ClientApp\src\components\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\components\piza-login-form\pizza-login-form.tsx" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-cart-item\pizza-cart-item.tsx" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-cart-list\pizza-cart-list.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-comment-list\pizza-comment-list.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-comment\pizza-comment.tsx" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-comment-form\pizza-comment-form.tsx" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-counter\pizza-counter.tsx" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-header\pizza-header.tsx" />
         <Content Include="ClientApp\src\app.scss" />
+        <Content Include="ClientApp\src\components\piza-login-form\pizza-login-form.scss" />
         <Content Include="ClientApp\src\components\pizza-cart-item\pizza-cart-item.scss" />
         <Content Include="ClientApp\src\components\pizza-cart-list\pizza-cart-list.scss" />
+        <Content Include="ClientApp\src\components\pizza-comment-list\pizza-comment-list.scss" />
+        <Content Include="ClientApp\src\components\pizza-comment\pizza-comment.scss" />
         <Content Include="ClientApp\src\components\pizza-comment-form\pizza-comment-form.scss" />
         <Content Include="ClientApp\src\components\pizza-counter\pizza-counter.scss" />
         <Content Include="ClientApp\src\components\pizza-header\pizza-header.scss" />
         <Content Include="ClientApp\src\components\pizza-logo\pizza-logo.scss" />
         <Content Include="ClientApp\src\components\pizza-modal\pizza-modal.scss" />
+        <Content Include="ClientApp\src\components\pizza-order-details\pizza-order-details.scss" />
         <Content Include="ClientApp\src\components\pizza-order-form\pizza-order-form.scss" />
+        <Content Include="ClientApp\src\components\pizza-order-history\pizza-order-history.scss" />
+        <Content Include="ClientApp\src\components\pizza-order-item-details\pizza-order-item-details.scss" />
+        <Content Include="ClientApp\src\components\pizza-registration-form\pizza-registration-form.scss" />
         <Content Include="ClientApp\src\components\pizza-stars\pizza-stars.scss" />
         <Content Include="ClientApp\src\components\pizza-toast\pizza-toast.scss" />
+        <Content Include="ClientApp\src\components\pizza-user-statistic\pizza-user-statistic.scss" />
         <Content Include="ClientApp\src\constants.scss" />
         <Content Include="ClientApp\src\hocs\with-page-wrapper.scss" />
+        <Content Include="ClientApp\src\images\languages\english.jpg" />
+        <Content Include="ClientApp\src\images\languages\russian.jpg" />
         <Content Include="ClientApp\src\images\menu\comments.png" />
         <Content Include="ClientApp\src\images\menu\drinks.png" />
         <Content Include="ClientApp\src\images\menu\pizza.png" />
+        <Content Include="ClientApp\src\images\menu\profile.png" />
         <Content Include="ClientApp\src\images\shared\burg.png" />
         <Content Include="ClientApp\src\images\shared\cart.png" />
         <Content Include="ClientApp\src\images\shared\logo.png" />
@@ -72,16 +87,69 @@
         <Content Include="ClientApp\src\mixins.scss" />
         <Content Include="ClientApp\src\pages\comments\comments.page.scss" />
         <Content Include="ClientApp\src\pages\main\main.page.scss" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-order-details\pizza-order-details.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-order-history\pizza-order-history.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-order-item-details\pizza-order-item-details.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-registration-form\pizza-registration-form.tsx" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-toast\pizza-toast.tsx" />
+        <Content Include="ClientApp\src\components\pizza-unauthorized-msg\pizza-unauthorized-msg.scss" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-unauthorized-msg\pizza-unauthorized-msg.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\components\pizza-user-statistic\pizza-user-statistic.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\constants\function.ts" />
+        <TypeScriptCompile Include="ClientApp\src\content-strings\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\content-strings\english-strings.ts" />
+        <TypeScriptCompile Include="ClientApp\src\content-strings\russian-strings.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\account\get-current-user-response.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\account\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\account\login-request.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\account\login-response.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\account\logout-request.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\account\logout-response.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\account\register-request.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\account\register-response.ts" />
         <TypeScriptCompile Include="ClientApp\src\contratcs\base-response.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\comment\create-comment-request.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\comment\create-comment-response.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\comment\get-comments-request.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\comment\get-somments-response.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\comment\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\contratcs\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\contratcs\order\make-order-request.ts" />
         <TypeScriptCompile Include="ClientApp\src\contratcs\order\make-order-response.ts" />
         <TypeScriptCompile Include="ClientApp\src\contratcs\order\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\contratcs\response-code.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\shared\get-partial-data-request.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\shared\get-partial-data-response.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\shared\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\user\get-order-history-request.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\user\get-order-history-response.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\user\get-user-statistic-response.ts" />
+        <TypeScriptCompile Include="ClientApp\src\contratcs\user\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\enums\language-type.ts" />
+        <TypeScriptCompile Include="ClientApp\src\factories\language-state-factory.ts" />
+        <TypeScriptCompile Include="ClientApp\src\hooks\use-current-user.ts" />
+        <TypeScriptCompile Include="ClientApp\src\hooks\use-load-data.ts" />
+        <TypeScriptCompile Include="ClientApp\src\hooks\use-scroll-to-bottom-tracking.ts" />
+        <TypeScriptCompile Include="ClientApp\src\images\languages\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\models-remote\order-item\orderi-tem.ts" />
+        <TypeScriptCompile Include="ClientApp\src\models-remote\order\order.ts" />
+        <TypeScriptCompile Include="ClientApp\src\models-remote\user\user-statistic.ts" />
+        <TypeScriptCompile Include="ClientApp\src\models-remote\user\user.ts" />
+        <TypeScriptCompile Include="ClientApp\src\models\login-form-data.ts" />
         <TypeScriptCompile Include="ClientApp\src\models\make-order-form-data.ts" />
+        <TypeScriptCompile Include="ClientApp\src\models\registration-form-data.ts" />
+        <TypeScriptCompile Include="ClientApp\src\pages\profile\profile.page.tsx" />
+        <TypeScriptCompile Include="ClientApp\src\redux\actions\account.actions.ts" />
+        <TypeScriptCompile Include="ClientApp\src\redux\actions\comment.actions.ts" />
+        <TypeScriptCompile Include="ClientApp\src\redux\actions\language.actions.ts" />
         <TypeScriptCompile Include="ClientApp\src\redux\actions\order.actions.ts" />
+        <TypeScriptCompile Include="ClientApp\src\redux\actions\user.actions.ts" />
+        <TypeScriptCompile Include="ClientApp\src\redux\reducers\user.reducer.ts" />
+        <TypeScriptCompile Include="ClientApp\src\redux\reducers\language.reducer.ts" />
+        <TypeScriptCompile Include="ClientApp\src\redux\selectors\user.selectors.ts" />
+        <TypeScriptCompile Include="ClientApp\src\redux\selectors\language.selectors.ts" />
         <TypeScriptCompile Include="ClientApp\src\routing\api-routing.ts" />
+        <Content Include="ClientApp\src\pages\profile\profile.page.scss" />
         <Content Include="ClientApp\webpack.config.js" />
         <None Remove="$(SpaRoot)**" />
         <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
@@ -114,14 +182,27 @@
         <TypeScriptCompile Include="ClientApp\src\redux\selectors\products.selectors.ts" />
         <TypeScriptCompile Include="ClientApp\src\routing\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\routing\routing.ts" />
+        <TypeScriptCompile Include="ClientApp\src\services\account.service.ts" />
+        <TypeScriptCompile Include="ClientApp\src\services\comment.service.ts" />
         <TypeScriptCompile Include="ClientApp\src\services\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\services\local-storage.service.ts" />
         <TypeScriptCompile Include="ClientApp\src\services\order.service.ts" />
+        <TypeScriptCompile Include="ClientApp\src\services\user.service.ts" />
         <TypeScriptCompile Include="ClientApp\src\utils\cart.utils.ts" />
+        <TypeScriptCompile Include="ClientApp\src\utils\language.utils.ts" />
         <TypeScriptCompile Include="ClientApp\src\utils\product-type.utils.ts" />
         <TypeScriptCompile Include="ClientApp\src\utils\products.utils.ts" />
         <TypeScriptCompile Include="ClientApp\src\utils\response-handle.utils.ts" />
+        <TypeScriptCompile Include="ClientApp\src\utils\response-handlers\account-response.handler.ts" />
+        <TypeScriptCompile Include="ClientApp\src\utils\response-handlers\comment-response.handler.ts" />
+        <TypeScriptCompile Include="ClientApp\src\utils\response-handlers\order-response.handler.ts" />
+        <TypeScriptCompile Include="ClientApp\src\utils\validation-errors.utils.ts" />
         <TypeScriptCompile Include="ClientApp\src\utils\__tests__\cart.utils.test.ts" />
+        <TypeScriptCompile Include="ClientApp\src\validators\comment.validator.ts" />
+        <TypeScriptCompile Include="ClientApp\src\validators\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\validators\login.validator.ts" />
+        <TypeScriptCompile Include="ClientApp\src\validators\order.validator.ts" />
+        <TypeScriptCompile Include="ClientApp\src\validators\registration.validator.ts" />
     </ItemGroup>
 
     <ItemGroup>
@@ -135,10 +216,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="ClientApp\src\enums" />
-      <Folder Include="ClientApp\src\factories" />
       <Folder Include="ClientApp\src\images\pizzas" />
-      <Folder Include="ClientApp\src\validators" />
       <Folder Include="Migrations" />
     </ItemGroup>
 
@@ -167,5 +245,10 @@
             </ResolvedFileToPublish>
         </ItemGroup>
     </Target>
-
+    <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+        <Exec Command="IF EXIST &quot;$(ProjectDir)_app_offline.htm&quot; (pushd $(ProjectDir) &amp; copy $(ProjectDir)_app_offline.htm $(ProjectDir)app_offline.htm &amp; popd)" />
+    </Target>
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="IF EXIST &quot;$(ProjectDir)\app_offline.htm&quot; (pushd $(ProjectDir) &amp; del $(ProjectDir)\app_offline.htm &amp; popd)" />
+    </Target>
 </Project>

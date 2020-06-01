@@ -2,8 +2,10 @@
 {
     public class OrderItemModel
     {
-        public int ProductId { get; set; }
         public decimal Price { get; set; }
+        public string ProductNameRu { get; set; }
+        public string ProductNameEng { get; set; }
+        public string ProductImg { get; set; }
         public int Count { get; set; }
     }
 }

@@ -1,11 +1,11 @@
-﻿export interface IOrderItemModel {
+﻿export interface IOrderPosition {
     productId: number,
     price: number,
     count: number
 }
 
 export interface IMakeOrderRequest {
-    orderPositions: Array<IOrderItemModel>,
+    orderPositions: Array<IOrderPosition>,
     address: string,
     name: string,
     lastName: string,

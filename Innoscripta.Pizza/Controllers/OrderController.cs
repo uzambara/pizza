@@ -1,6 +1,8 @@
 ﻿using System.Threading.Tasks;
+using Innoscripta.Pizza.Contracts;
 using Innoscripta.Pizza.Contracts.Order;
 using Innoscripta.Pizza.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Innoscripta.Pizza.Controllers
@@ -9,7 +11,8 @@ namespace Innoscripta.Pizza.Controllers
     {
         private readonly IOrderService _orderService;
 
-        public OrderController(IOrderService orderService)
+        public OrderController(
+            IOrderService orderService)
         {
             _orderService = orderService;
         }
@@ -18,7 +21,15 @@ namespace Innoscripta.Pizza.Controllers
         [Route(Routing.ApiRoutes.Order.Create)]
         public async Task<MakeOrderResponse> Create(MakeOrderRequest request)
         {
-            return await _orderService.CreateAsync(request);
+            var order = await _orderService.CreateAsync(request);
+            if (order == null)
+            {
+                return new MakeOrderResponse()
+                {
+                    Code = ResponseCode.InnerError
+                };
+            }
+            return new MakeOrderResponse();
         }
     }
 }

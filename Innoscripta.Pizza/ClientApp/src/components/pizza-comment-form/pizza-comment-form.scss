@@ -49,3 +49,26 @@
 .comment-label {
     flex-basis: 100%;
 }
+
+.stars-and-submit-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 100%;
+}
+
+.stars-and-submit-wrapper {
+    flex-direction: column-reverse;
+
+    .pizza-stars {
+        margin-bottom: 15px;
+    }
+}
+
+
+
+@media screen and (min-width: $_mobileSizeLimit) {
+    .stars-and-submit-wrapper {
+        flex-direction: row;
+    }
+}

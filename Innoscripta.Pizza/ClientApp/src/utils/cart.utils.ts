@@ -3,7 +3,6 @@ import {CartItemsMap} from "../redux/reducers";
 import {ICartItem} from "../models";
 
 const calcTotalPrice = memoize((cart: CartItemsMap): number => {
-    console.log("calc");
     let result = 0;
     for(let id in cart) {
         const cartItem = cart[id];

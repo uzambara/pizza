@@ -47,6 +47,200 @@ namespace Innoscripta.Pizza.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Comments");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Date = new DateTime(2020, 6, 1, 10, 52, 49, 424, DateTimeKind.Local).AddTicks(6954),
+                            Stars = (byte)2,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Date = new DateTime(2020, 5, 31, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7672),
+                            Stars = (byte)4,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Date = new DateTime(2020, 6, 1, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7786),
+                            Stars = (byte)3,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Date = new DateTime(2020, 5, 30, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7790),
+                            Stars = (byte)5,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Date = new DateTime(2020, 5, 29, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7795),
+                            Stars = (byte)4,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Date = new DateTime(2020, 5, 28, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7801),
+                            Stars = (byte)4,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 1
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Date = new DateTime(2020, 6, 1, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7803),
+                            Stars = (byte)2,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Date = new DateTime(2020, 5, 31, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7806),
+                            Stars = (byte)4,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Date = new DateTime(2020, 6, 1, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7808),
+                            Stars = (byte)3,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Date = new DateTime(2020, 5, 30, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7812),
+                            Stars = (byte)5,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Date = new DateTime(2020, 5, 29, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7814),
+                            Stars = (byte)4,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Date = new DateTime(2020, 5, 28, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7817),
+                            Stars = (byte)4,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 2
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Date = new DateTime(2020, 6, 1, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7819),
+                            Stars = (byte)2,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Date = new DateTime(2020, 5, 31, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7822),
+                            Stars = (byte)4,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Date = new DateTime(2020, 6, 1, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7824),
+                            Stars = (byte)3,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Date = new DateTime(2020, 5, 30, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7826),
+                            Stars = (byte)5,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Date = new DateTime(2020, 5, 29, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7828),
+                            Stars = (byte)4,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Date = new DateTime(2020, 5, 28, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7832),
+                            Stars = (byte)4,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 3
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Date = new DateTime(2020, 6, 1, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7835),
+                            Stars = (byte)2,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Date = new DateTime(2020, 5, 31, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7837),
+                            Stars = (byte)4,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Date = new DateTime(2020, 6, 1, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7839),
+                            Stars = (byte)3,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Date = new DateTime(2020, 5, 30, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7842),
+                            Stars = (byte)5,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Date = new DateTime(2020, 5, 29, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7844),
+                            Stars = (byte)4,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Date = new DateTime(2020, 5, 28, 10, 52, 49, 425, DateTimeKind.Local).AddTicks(7846),
+                            Stars = (byte)4,
+                            Text = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem veritatis molestias harum soluta nihil, distinctio, sit aperiam dolor debitis culpa eveniet illum, officiis quo architecto hic magni. Eos, incidunt blanditiis.Dolor repellat eum quidem amet! Doloremque dolores autem illo dolore totam, est quo provident in consequatur eligendi, hic quisquam cumque omnis facilis. Vero minus nesciunt quia neque? Nobis, nisi veritatis.",
+                            UserId = 4
+                        });
                 });
 
             modelBuilder.Entity("Innoscripta.Pizza.Data.Domain.OrderEntity", b =>
@@ -78,7 +272,7 @@ namespace Innoscripta.Pizza.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("OrderEntity");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Innoscripta.Pizza.Data.Domain.OrderItemEntity", b =>
@@ -109,7 +303,7 @@ namespace Innoscripta.Pizza.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderItemEntity");
+                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("Innoscripta.Pizza.Data.Domain.ProductEntity", b =>
@@ -122,14 +316,22 @@ namespace Innoscripta.Pizza.Migrations
                     b.Property<DateTime?>("Deleted")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("DescriptionEng")
+                        .HasColumnType("character varying(1024)")
+                        .HasMaxLength(1024);
+
+                    b.Property<string>("DescriptionRu")
                         .HasColumnType("character varying(1024)")
                         .HasMaxLength(1024);
 
                     b.Property<string>("Img")
                         .HasColumnType("text");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("NameEng")
+                        .HasColumnType("character varying(64)")
+                        .HasMaxLength(64);
+
+                    b.Property<string>("NameRu")
                         .HasColumnType("character varying(64)")
                         .HasMaxLength(64);
 
@@ -147,63 +349,77 @@ namespace Innoscripta.Pizza.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "<b>Ingredients:</b> pizza sauce, Mozzarella and Parmesan cheeses, champignons, bacon, pepperoni sausage, tomatoes, chicken breast, garlic, red onion, greens.",
+                            DescriptionEng = "<b>Ingredients:</b> pizza sauce, Mozzarella and Parmesan cheeses, champignons, bacon, pepperoni sausage, tomatoes, chicken breast, garlic, red onion, greens.",
+                            DescriptionRu = "<b>Состав</b> пицца-соус, сыры «Моцарелла» и «Пармезан», шампиньоны, бекон, колбаса пепперони, помидоры, куриная грудка, чеснок, лук красный, зелень.",
                             Img = "/images/pizzas/pizzaman.png",
-                            Name = "Pizzaman",
+                            NameEng = "Pizzaman",
+                            NameRu = "Пиццамен",
                             Price = 4m,
                             Type = 1
                         },
                         new
                         {
                             Id = 2,
-                            Description = "<b>Ingredients:</b> pizza sauce, Mozzarella cheese, pepperoni sausage, champignons.",
+                            DescriptionEng = "<b>Ingredients:</b> pizza sauce, Mozzarella cheese, pepperoni sausage, champignons.",
+                            DescriptionRu = "<b>Состав</b> пицца-соус, сыр «Моцарелла», колбаса пепперони, шампиньоны.",
                             Img = "/images/pizzas/pepperoni.png",
-                            Name = "Pepperoni",
+                            NameEng = "Pepperoni",
+                            NameRu = "Пепперони",
                             Price = 5m,
                             Type = 1
                         },
                         new
                         {
                             Id = 3,
-                            Description = "<b>Ingredients:</b> pizza sauce, mozzarella cheese, ham, pineapple.",
+                            DescriptionEng = "<b>Ingredients:</b> pizza sauce, mozzarella cheese, ham, pineapple.",
+                            DescriptionRu = "<b>Состав</b> пицца-соус, сыр «Моцарелла», ветчина, ананасы.",
                             Img = "/images/pizzas/hawaiian.png",
-                            Name = "Hawaiian",
+                            NameEng = "Hawaiian",
+                            NameRu = "Гавайская",
                             Price = 4m,
                             Type = 1
                         },
                         new
                         {
                             Id = 4,
-                            Description = "<b>Ingredients:</b> pizza sauce, mozzarella cheese, tomatoes.",
+                            DescriptionEng = "<b>Ingredients:</b> pizza sauce, mozzarella cheese, tomatoes.",
+                            DescriptionRu = "<b>Состав</b> пицца-соус, сыр «Моцарелла», помидоры.",
                             Img = "/images/pizzas/margarita.png",
-                            Name = "Margarita",
+                            NameEng = "Margarita",
+                            NameRu = "Маргарита",
                             Price = 4.5m,
                             Type = 1
                         },
                         new
                         {
                             Id = 5,
-                            Description = "<b>Ingredients:</b> pizza sauce, mozzarella and parmesan cheeses, ham, mushrooms, pepperoni, jalapenos.",
+                            DescriptionEng = "<b>Ingredients:</b> pizza sauce, mozzarella and parmesan cheeses, ham, mushrooms, pepperoni, jalapenos.",
+                            DescriptionRu = "<b>Состав</b> пицца-соус, сыры «Моцарелла» и «Пармезан», ветчина, шампиньоны, колбаса пепперони, перец халапеньо.",
                             Img = "/images/pizzas/dragon.png",
-                            Name = "Dragon",
+                            NameEng = "Dragon",
+                            NameRu = "Дракон",
                             Price = 5m,
                             Type = 1
                         },
                         new
                         {
                             Id = 6,
-                            Description = "<b>Ingredients:</b> mustard sauce, Mozzarella cheese, chicken breast, red onion, mushrooms, garlic.",
+                            DescriptionEng = "<b>Ingredients:</b> mustard sauce, Mozzarella cheese, chicken breast, red onion, mushrooms, garlic.",
+                            DescriptionRu = "<b>Состав</b> соус «Горчичный», сыр «Моцарелла» куриная грудка, лук красный, шампиньоны, чеснок.",
                             Img = "/images/pizzas/chicken-julienne.png",
-                            Name = "Chicken julienne",
+                            NameEng = "Chicken julienne",
+                            NameRu = "Куриный жульен",
                             Price = 6.5m,
                             Type = 1
                         },
                         new
                         {
                             Id = 7,
-                            Description = "<b>Ingredients:</b> pizza sauce, Mozzarella, Parmesan, Cheddar cheeses, blue noble cheese.",
+                            DescriptionEng = "<b>Ingredients:</b> pizza sauce, Mozzarella, Parmesan, Cheddar cheeses, blue noble cheese.",
+                            DescriptionRu = "<b>Состав</b> пицца-соус, сыры «Моцарелла», «Пармезан», «Чеддер», сыр с голубой благородной плесенью.",
                             Img = "/images/pizzas/four-cheeses.png",
-                            Name = "Four cheeses",
+                            NameEng = "Four cheeses",
+                            NameRu = "Четыре сыра",
                             Price = 7m,
                             Type = 1
                         },
@@ -211,7 +427,8 @@ namespace Innoscripta.Pizza.Migrations
                         {
                             Id = 8,
                             Img = "/images/drinks/coca-cola.png",
-                            Name = "Coca-cola",
+                            NameEng = "Coca-cola",
+                            NameRu = "Кока-кола",
                             Price = 2m,
                             Type = 2
                         },
@@ -219,7 +436,8 @@ namespace Innoscripta.Pizza.Migrations
                         {
                             Id = 9,
                             Img = "/images/drinks/fanta.png",
-                            Name = "Fanta",
+                            NameEng = "Fanta",
+                            NameRu = "Фанта",
                             Price = 2m,
                             Type = 2
                         },
@@ -227,16 +445,18 @@ namespace Innoscripta.Pizza.Migrations
                         {
                             Id = 10,
                             Img = "/images/drinks/cranberry-juice.png",
-                            Name = "Four cheeses",
+                            NameEng = "Сranberry juice",
+                            NameRu = "Морс",
                             Price = 3m,
                             Type = 2
                         },
                         new
                         {
                             Id = 11,
-                            Description = "",
+                            DescriptionEng = "",
                             Img = "/images/drinks/bon-aqua.png",
-                            Name = "Bon aqua",
+                            NameEng = "Bon aqua",
+                            NameRu = "Бонаква",
                             Price = 1m,
                             Type = 2
                         });
@@ -251,6 +471,9 @@ namespace Innoscripta.Pizza.Migrations
 
                     b.Property<DateTime?>("BirthDay")
                         .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("CreateUserPlace")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime?>("Deleted")
                         .HasColumnType("timestamp without time zone");
@@ -271,15 +494,80 @@ namespace Innoscripta.Pizza.Migrations
                         .HasColumnType("character varying(20)")
                         .HasMaxLength(20);
 
+                    b.Property<int>("Role")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreateUserPlace = 0,
+                            LastName = "Pupkin",
+                            Name = "Vasiliy",
+                            Password = "ICy5YqxZB1uWSwcVLSNLcA==",
+                            Phone = "1234567891",
+                            Role = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreateUserPlace = 0,
+                            LastName = "Ivanova",
+                            Name = "Mariya",
+                            Password = "ICy5YqxZB1uWSwcVLSNLcA==",
+                            Phone = "1234567892",
+                            Role = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreateUserPlace = 0,
+                            LastName = "Levin",
+                            Name = "Petr",
+                            Password = "ICy5YqxZB1uWSwcVLSNLcA==",
+                            Phone = "1234567893",
+                            Role = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreateUserPlace = 0,
+                            LastName = "Bikov",
+                            Name = "Ivan",
+                            Password = "ICy5YqxZB1uWSwcVLSNLcA==",
+                            Phone = "1234567894",
+                            Role = 1
+                        });
+                });
+
+            modelBuilder.Entity("Innoscripta.Pizza.Data.Domain.UserStatisticEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnName("UserId")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("Bonus")
+                        .HasColumnType("numeric");
+
+                    b.Property<int>("OrdersCount")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("TotalOrdersPrice")
+                        .HasColumnType("numeric");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserStatistics");
                 });
 
             modelBuilder.Entity("Innoscripta.Pizza.Data.Domain.CommentEntity", b =>
                 {
                     b.HasOne("Innoscripta.Pizza.Data.Domain.UserEntity", "User")
-                        .WithMany()
+                        .WithMany("Comments")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -305,6 +593,15 @@ namespace Innoscripta.Pizza.Migrations
                     b.HasOne("Innoscripta.Pizza.Data.Domain.ProductEntity", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Innoscripta.Pizza.Data.Domain.UserStatisticEntity", b =>
+                {
+                    b.HasOne("Innoscripta.Pizza.Data.Domain.UserEntity", "User")
+                        .WithOne("Statistic")
+                        .HasForeignKey("Innoscripta.Pizza.Data.Domain.UserStatisticEntity", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

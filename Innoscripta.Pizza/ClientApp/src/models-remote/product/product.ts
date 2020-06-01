@@ -2,9 +2,11 @@
 
 export interface IProductModelRemote {
     id: number,
-    name: string,
+    nameRu: string,
+    nameEng: string,
     price: number,
     img: string,
-    description: string,
+    descriptionRu: string,
+    descriptionEng: string,
     type: ProductType
 }

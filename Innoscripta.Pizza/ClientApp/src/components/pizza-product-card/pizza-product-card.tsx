@@ -8,7 +8,9 @@ import {CurrencyType} from "../../enums";
 import cn from "classnames";
 import {cartItemFactory} from "../../factories";
 import {cartActions} from "../../redux/actions";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {languageSelectors} from "../../redux/selectors";
+import {productUtils} from "../../utils/products.utils";
 
 export interface IPizzaCardProps {
     currencyType: CurrencyType,
@@ -17,14 +19,18 @@ export interface IPizzaCardProps {
 }
 
 function PizzaProductCardComponent(props: IPizzaCardProps) {
+    const languageType = useSelector(languageSelectors.selectLanguageType);
     const {currencyType, productModel, className} = props;
-    const {price, name, img, description} = productModel;
+    const {price, img} = productModel;
+    const {name, description} = productUtils.getNameAndDescription(productModel, languageType);
 
     const dispatch = useDispatch();
     const addToCart = () => {
-        const cartItem = cartItemFactory.createCartItem(productModel);
-        dispatch(cartActions.AddToCart(cartItem));
+        const cartItem = cartItemFactory.createCartItem(productModel, languageType);
+        dispatch(cartActions.addToCart(cartItem));
     };
+
+    const productCardString = useSelector(languageSelectors.selectProductCard);
 
     return <section className={cn(styles.wrapper, className)}>
         <div className={styles.imageAndNameWrapper} style={{backgroundImage: `url(${Images.PizzaCard.background})`}}>
@@ -37,7 +43,7 @@ function PizzaProductCardComponent(props: IPizzaCardProps) {
                 className={styles.pizzaPrice}
                 dangerouslySetInnerHTML={{__html: currencyUtils.getPriceString(price, currencyType)}}
             />
-            <PizzaButton onClick={addToCart} style="submit">Buy</PizzaButton>
+            <PizzaButton onClick={addToCart} style="submit">{productCardString.BuyButton}</PizzaButton>
         </div>
     </section>
 }

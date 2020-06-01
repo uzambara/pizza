@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Innoscripta.Pizza.Data.Domain
 {
+    [Table("Orders")]
     public class OrderEntity: IEntityBase
     {
         public int Id { get; set; }

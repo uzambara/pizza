@@ -1,7 +1,9 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Innoscripta.Pizza.Data.Domain
 {
+    [Table("OrderItems")]
     public class OrderItemEntity: IEntityBase
     {
         public int Id { get; set; }

@@ -42,12 +42,19 @@ export const cartReducer = (state: ICartState = initialState, action: CartAction
             const {id, diff} = action.payload;
             const items = {...state.items};
             let itemForChange: ICartItem = {...(items[id])};
-            itemForChange.count += diff;
-
+            const newCount = itemForChange.count + diff;
+            if(newCount < 0) {
+                return state;
+            }
+            itemForChange.count = newCount;
             items[id] = itemForChange;
             LocalStorageService.setItem(localStorageKeys.CART_ITEMS, items);
             return {...state, items};
         }
+        case CartActionType.ClearCart:
+            return {
+                items: []
+            };
         default:
             return state;
     }

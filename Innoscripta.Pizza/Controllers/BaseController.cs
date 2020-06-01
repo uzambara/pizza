@@ -5,6 +5,5 @@ namespace Innoscripta.Pizza.Controllers
     [ApiController]
     public class BaseController: ControllerBase
     {
-
     }
 }

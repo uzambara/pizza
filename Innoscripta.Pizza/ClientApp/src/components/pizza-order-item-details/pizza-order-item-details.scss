@@ -1,0 +1,26 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.product-image {
+    max-width: 70px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.product-price,
+.product-name,
+.product-count {
+    font-family: $_fontFamily;
+}
+
+.product-name {
+    min-width: 130px;
+}
+
+.product-price {
+    min-width: 60px;
+    text-align: right;
+    margin-right: 20px;
+}

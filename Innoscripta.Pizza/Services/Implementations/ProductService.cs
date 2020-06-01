@@ -12,7 +12,10 @@ namespace Innoscripta.Pizza.Services.Implementations
 {
     public class ProductService: IProductService
     {
+        // Repositories
         private readonly BaseRepository<ProductEntity> _productRepository;
+
+        // Mapper
         private readonly IMapper _mapper;
 
         public ProductService(BaseRepository<ProductEntity> productRepository, IMapper mapper)
@@ -20,14 +23,10 @@ namespace Innoscripta.Pizza.Services.Implementations
             _productRepository = productRepository;
             _mapper = mapper;
         }
-        public async Task<GetAllProductsResponse> GetAllAsync()
+        public async Task<IEnumerable<ProductModel>> GetAllAsync()
         {
             var products = await _productRepository.GetAll().ToListAsync();
-
-            return new GetAllProductsResponse()
-            {
-                Products = _mapper.Map<IEnumerable<ProductModel>>(products)
-            };
+            return _mapper.Map<IEnumerable<ProductModel>>(products);
         }
     }
 }

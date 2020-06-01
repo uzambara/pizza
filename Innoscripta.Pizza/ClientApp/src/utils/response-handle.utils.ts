@@ -1,22 +1,9 @@
-﻿import {IBaseResponse, ResponseCode} from "../contratcs";
-import {Toasts} from "../components";
-import {LocalStorageService} from "../services";
-import {localStorageKeys} from "../constants";
-
-function handleCreateOrder(response: IBaseResponse) {
-    switch (response.code) {
-        case ResponseCode.Ok: {
-            Toasts.success({title: "Заказ создан", text: "ожидайте доставку в течении часа"});
-            LocalStorageService.remove(localStorageKeys.CART_ITEMS);
-            break;
-        }
-
-    }
-}
-
+﻿import {order} from "./response-handlers/order-response.handler";
+import {comment} from "./response-handlers/comment-response.handler";
+import {account} from "./response-handlers/account-response.handler";
 
 export const responseHandleUtils = {
-    order: {
-        handleCreateOrder
-    }
+    order,
+    comment,
+    account
 };

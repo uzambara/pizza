@@ -6,7 +6,7 @@ namespace Innoscripta.Pizza.Contracts.Account
     {
         public AccountLoginValidation()
         {
-            RuleFor(req => req.Login).NotEmpty();
+            RuleFor(req => req.Phone).NotEmpty();
             RuleFor(req => req.Password).NotEmpty();
         }
     }

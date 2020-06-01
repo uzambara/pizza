@@ -1,10 +1,11 @@
-﻿using System.Threading.Tasks;
-using Innoscripta.Pizza.Contracts.Product;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Innoscripta.Pizza.Models;
 
 namespace Innoscripta.Pizza.Services.Interfaces
 {
     public interface IProductService
     {
-        public Task<GetAllProductsResponse> GetAllAsync();
+        Task<IEnumerable<ProductModel>> GetAllAsync();
     }
 }

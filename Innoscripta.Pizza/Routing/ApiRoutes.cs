@@ -22,6 +22,21 @@
         {
             private const string ControllerRoute = "order/";
             public const string Create = Root + ControllerRoute + "create";
+            public const string History = Root + ControllerRoute + "history";
+        }
+
+        public static class Comment
+        {
+            private const string ControllerRoute = "comment/";
+            public const string Create = Root + ControllerRoute + "create";
+            public const string Get = Root + ControllerRoute + "get";
+        }
+
+        public static class User
+        {
+            private const string ControllerRoute = "user/";
+            public const string OrderHistory = Root + ControllerRoute + "order-history";
+            public const string Statistic = Root + ControllerRoute + "statistic";
         }
     }
 }

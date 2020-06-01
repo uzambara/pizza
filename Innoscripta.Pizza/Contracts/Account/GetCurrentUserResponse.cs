@@ -1,9 +1,10 @@
 ﻿using Innoscripta.Pizza.Data.Domain;
+using Innoscripta.Pizza.Models;
 
 namespace Innoscripta.Pizza.Contracts.Account
 {
     public class GetCurrentUserResponse
     {
-        public UserEntity User { get; set; }
+        public UserModel User { get; set; }
     }
 }

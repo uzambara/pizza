@@ -11,11 +11,15 @@ namespace Innoscripta.Pizza.Data.Domain
         [Key]
         public int Id { get; set; }
         [MaxLength(64)]
-        public string Name { get; set; }
+        public string NameRu { get; set; }
+        [MaxLength(64)]
+        public string NameEng { get; set; }
         public decimal Price { get; set; }
         public string Img { get; set; }
         [MaxLength(1024)]
-        public string Description { get; set; }
+        public string DescriptionRu { get; set; }
+        [MaxLength(1024)]
+        public string DescriptionEng { get; set; }
         public ProductType Type { get; set; }
         public DateTime? Deleted { get; set; }
     }

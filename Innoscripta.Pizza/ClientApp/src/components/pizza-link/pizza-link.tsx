@@ -3,12 +3,13 @@ import {Link} from "react-router-dom";
 
 export interface IPizzaLinkProps {
     href: string,
-    className?: string
+    className?: string,
+    onClick?: () => void
 }
 
 function PizzaLinkComponent(props: PropsWithChildren<IPizzaLinkProps>) {
-    const {children, href, className} = props;
-    return <Link to={href} className={className}>{children}</Link>
+    const {children, href, className, onClick} = props;
+    return <Link to={href} className={className} onClick={onClick}>{children}</Link>
 }
 
 export const PizzaLink = memo(PizzaLinkComponent);

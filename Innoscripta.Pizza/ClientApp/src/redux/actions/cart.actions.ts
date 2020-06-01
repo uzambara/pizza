@@ -3,12 +3,14 @@
 export type CartAction =
     IAddToCart
     | IRemoveItem
-    | IChangeItemCount;
+    | IChangeItemCount
+    | IClearCart;
 
 export enum CartActionType {
     AddToCart = "ADD_TO_CART",
     RemoveItem = "REMOVE_ITEM",
     ChangeItemCount = "CHANGE_ITEM_COUNT",
+    ClearCart = "CLEAR_CART"
 }
 
 export interface IAddToCart {
@@ -16,7 +18,7 @@ export interface IAddToCart {
     payload: ICartItem
 }
 
-function AddToCart(item: ICartItem): IAddToCart {
+function addToCart(item: ICartItem): IAddToCart {
     return {
         type: CartActionType.AddToCart,
         payload: item
@@ -28,7 +30,7 @@ export interface IRemoveItem {
     payload: number
 }
 
-export function RemoveItem(id: number): IRemoveItem {
+function removeItem(id: number): IRemoveItem {
     return {
         type: CartActionType.RemoveItem,
         payload: id
@@ -43,7 +45,7 @@ export interface IChangeItemCount {
     }
 }
 
-export function ChangeItemCount(id: number, diff: number): IChangeItemCount {
+function changeItemCount(id: number, diff: number): IChangeItemCount {
     return {
         type: CartActionType.ChangeItemCount,
         payload: {
@@ -53,8 +55,21 @@ export function ChangeItemCount(id: number, diff: number): IChangeItemCount {
     }
 }
 
+export interface IClearCart {
+    type: CartActionType.ClearCart,
+    payload: null
+}
+
+function clearCart(): IClearCart {
+    return {
+        type: CartActionType.ClearCart,
+        payload: null
+    }
+}
+
 export const cartActions = {
-    AddToCart,
-    RemoveItem,
-    ChangeItemCount
+    addToCart,
+    removeItem,
+    changeItemCount,
+    clearCart
 };

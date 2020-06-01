@@ -1,10 +1,10 @@
-﻿import {IMakeOrderRequest, IMakeOrderResponse, IOrderItemModel} from "../contratcs/order";
+﻿import {IMakeOrderRequest, IMakeOrderResponse, IOrderPosition} from "../contratcs/order";
 import {fetchUtil} from "../utils";
 import {ApiRouting} from "../routing";
-import {ICartItem, IMakeOrderFormData} from "../models";
+import {IMakeOrderFormData} from "../models";
 
 export class OrderService {
-    public static async MakeOrder(orderItems: IOrderItemModel[], orderFormData: IMakeOrderFormData): Promise<IMakeOrderResponse> {
+    public static async MakeOrder(orderItems: IOrderPosition[], orderFormData: IMakeOrderFormData): Promise<IMakeOrderResponse> {
         const requestData: IMakeOrderRequest = {
             orderPositions: orderItems,
             ...orderFormData

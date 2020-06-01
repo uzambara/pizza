@@ -10,6 +10,10 @@
     align-items: center;
 }
 
+.logo {
+    flex-shrink: 0;
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -47,7 +51,7 @@
     min-width: $_mobileSizeLimit;
     padding: 10px;
     flex-direction: column;
-    box-shadow: 2px 0 1px 0 rgba(148, 145, 148, 0.68);
+    box-shadow: $_boxShadow;
 }
 
 .menu-list-wrapper--opened {
@@ -117,6 +121,47 @@
 
 .sign-in-item {
     margin-right: 15px;
+}
+
+.currency-select {
+    margin-right: 15px;
+}
+
+.language-select-wrapper {
+    position: relative;
+
+    .language-select {
+        padding-left: 35px;
+        height: 100%;
+    }
+
+    .language-image {
+        height: auto;
+        width: 28px;
+        position: absolute;
+        left: 5px;
+        top: 0;
+        bottom: 0;
+        margin-bottom: auto;
+        margin-top: auto;
+    }
+}
+
+.registration-form-modal-container {
+    justify-content: unset;
+    align-items: unset;
+}
+
+@media screen and (min-width: 300px) {
+    .registration-form-modal-container {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .registration-form-modal {
+        margin-top: 0;
+        max-width: 300px;
+    }
 }
 
 @media screen and (min-width: $_desktopSizeLimit) {

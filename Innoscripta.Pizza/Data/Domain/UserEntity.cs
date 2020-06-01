@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Innoscripta.Pizza.Data.Enums;
 
 namespace Innoscripta.Pizza.Data.Domain
 {
@@ -19,5 +21,9 @@ namespace Innoscripta.Pizza.Data.Domain
         public string Password { get; set; }
         public DateTime? BirthDay { get; set; }
         public DateTime? Deleted { get; set; }
+        public CreateUserPlace CreateUserPlace { get; set; }
+        public UserRole Role { get; set; }
+        public UserStatisticEntity Statistic { get; set; }
+        public List<CommentEntity> Comments { get; set; }
     }
 }

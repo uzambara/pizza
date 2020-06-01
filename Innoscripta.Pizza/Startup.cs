@@ -1,11 +1,8 @@
+using System;
 using System.Linq;
 using AutoMapper;
-using FluentValidation.AspNetCore;
-using Innoscripta.Pizza.AppStart.ServicesConfiguration;
-using Innoscripta.Pizza.Data.Repositories;
-using Innoscripta.Pizza.Factories;
-using Innoscripta.Pizza.Services.Implementations;
-using Innoscripta.Pizza.Services.Interfaces;
+using Innoscripta.Pizza.Configuration.AppBuilderConfiguration;
+using Innoscripta.Pizza.Configuration.ServiceCollectionConfiguration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
@@ -14,8 +11,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace Innoscripta.Pizza
 {
@@ -30,61 +25,19 @@ namespace Innoscripta.Pizza
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.ConfigureControllers();
-            services.ConfigureDatabase(Configuration);
+            ControllersConfiguration.AddControllers(services);
+            services.AddDatabase(Configuration);
             services.AddAutoMapper(typeof(Startup));
+            services.AddAuthenticationConfiguration();
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
-
-            services.AddScoped(typeof(BaseRepository<>));
-            services.AddScoped<IProductService, ProductService>();
-            services.AddScoped<IOrderService, OrderService>();
-            services.AddScoped<IUserService, UserService>();
-
-            services.AddTransient<OrderEntityFactory>();
-            services.AddTransient<OrderItemFactory>();
-            services.AddTransient<UserEntityFactory>();
-
+            services.AddAppServices();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,  ILogger<Startup> logger)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-            }
-
-            app.UseExceptionHandler(errorApp =>
-            {
-                errorApp.Run(async context =>
-                {
-                    context.Response.StatusCode = 400;
-                    context.Response.ContentType = "application/json";
-
-                    var exceptionHandlerFeature =
-                        context.Features.Get<IExceptionHandlerFeature>();
-
-                    logger.LogError(exceptionHandlerFeature.Error, "UNHANDLED APP EXCEPTION");
-                    await context.Response.WriteAsync(exceptionHandlerFeature.Error.ToString());
-                });
-            });
-
-            if (env.IsDevelopment())
-            {
-                // подключаем CORS
-                app.UseCors(builder =>
-                {
-                    var credentials = Configuration.GetSection("AllowedHosts").Get<string[]>();
-                    builder
-                        .WithOrigins(credentials.ToArray())
-                        .AllowCredentials()
-                        .AllowAnyHeader()
-                        .AllowAnyMethod();
-                });
-            }
+            app.UseExceptionHandlerMiddleware(env, logger);
+            logger.LogDebug(string.Join(" ", Configuration.GetSection("AllowedHosts").Get<string[]>()));
+            app.UseCorsMiddleware(env, Configuration);
 
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
@@ -105,6 +58,7 @@ namespace Innoscripta.Pizza
             {
                 spa.Options.SourcePath = "ClientApp";
             });
+            Console.WriteLine("Service started on https://localhost:5001 http://localhost:5000");
         }
     }
 }

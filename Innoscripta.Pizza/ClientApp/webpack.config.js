@@ -163,15 +163,16 @@ const plugins = () => {
                 collapseWhitespace: isProd
             }
         }),
-        new CleanWebpackPlugin(),
+
         new MiniCssExtractPlugin({
             filename: filename('css')
         })
     );
 
-    // if (isProd) {
-    //     base.push(new BundleAnalyzerPlugin())
-    // }
+    if (isProd) {
+        base.push(new CleanWebpackPlugin());
+        //base.push(new BundleAnalyzerPlugin())
+    }
 
     return base
 };
