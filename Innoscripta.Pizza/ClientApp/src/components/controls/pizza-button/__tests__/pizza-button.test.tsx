@@ -35,7 +35,7 @@ describe("pizza button tests", () => {
         ["submit", "buttonSubmit"],
         ["alert", "buttonAlert"],
         ["success", "buttonSuccess"],
-    ])("should have right class name, according to given type prop", (style, className) => {
+    ])("should have right class name, according to given type prop", (style: any, className) => {
         // Act
         const component = mount(<PizzaButton onClick={onClickMock} style={style}/>);
 
