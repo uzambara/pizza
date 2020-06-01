@@ -1,10 +1,10 @@
 ﻿import {combineReducers} from "redux";
-import {cartReducer, ICartState, CartItemsMap} from "./cart.reducer";
+import {cartReducer, ICartState, CartItemsMap, initialState as cartInitialState} from "./cart.reducer";
 import {ISettingsState, settingsReducer} from "./settings.reducer";
 import {IProductsState, productsReducer} from "./products.reducer";
 import { reducer as formReducer } from 'redux-form';
 import {ILanguageState, languageReducer} from "./language.reducer";
-import {IUserState, UserReducer} from "./user.reducer";
+import {IUserState, userReducer} from "./user.reducer";
 
 export interface IGlobalState {
     cart: ICartState,
@@ -15,15 +15,17 @@ export interface IGlobalState {
     user: IUserState
 }
 
-export const rootReducer = combineReducers<IGlobalState>({
+const rootReducer = combineReducers<IGlobalState>({
     cart: cartReducer,
     settings: settingsReducer,
     products: productsReducer,
     form: formReducer,
     language: languageReducer,
-    user: UserReducer
+    user: userReducer
 });
 
 export {
-    CartItemsMap
+    CartItemsMap,
+    rootReducer,
+    cartInitialState
 }

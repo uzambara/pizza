@@ -42,6 +42,7 @@
         <Content Include="ClientApp\jest-ci.config.js" />
         <Content Include="ClientApp\jest-ignore-import.js" />
         <Content Include="ClientApp\jest.config.js" />
+        <TypeScriptCompile Include="ClientApp\src\components\controls\pizza-button\__tests__\pizza-button.test.tsx" />
         <TypeScriptCompile Include="ClientApp\src\components\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\components\piza-login-form\pizza-login-form.tsx" />
         <TypeScriptCompile Include="ClientApp\src\components\pizza-cart-item\pizza-cart-item.tsx" />
@@ -130,6 +131,7 @@
         <TypeScriptCompile Include="ClientApp\src\hooks\use-current-user.ts" />
         <TypeScriptCompile Include="ClientApp\src\hooks\use-load-data.ts" />
         <TypeScriptCompile Include="ClientApp\src\hooks\use-scroll-to-bottom-tracking.ts" />
+        <TypeScriptCompile Include="ClientApp\src\hooks\__tests__\use-scroll-to-bottom-tracking.test.ts" />
         <TypeScriptCompile Include="ClientApp\src\images\languages\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\models-remote\order-item\orderi-tem.ts" />
         <TypeScriptCompile Include="ClientApp\src\models-remote\order\order.ts" />
@@ -146,6 +148,7 @@
         <TypeScriptCompile Include="ClientApp\src\redux\actions\user.actions.ts" />
         <TypeScriptCompile Include="ClientApp\src\redux\reducers\user.reducer.ts" />
         <TypeScriptCompile Include="ClientApp\src\redux\reducers\language.reducer.ts" />
+        <TypeScriptCompile Include="ClientApp\src\redux\reducers\__tests__\cart.reducer.test.ts" />
         <TypeScriptCompile Include="ClientApp\src\redux\selectors\user.selectors.ts" />
         <TypeScriptCompile Include="ClientApp\src\redux\selectors\language.selectors.ts" />
         <TypeScriptCompile Include="ClientApp\src\routing\api-routing.ts" />
@@ -188,6 +191,8 @@
         <TypeScriptCompile Include="ClientApp\src\services\local-storage.service.ts" />
         <TypeScriptCompile Include="ClientApp\src\services\order.service.ts" />
         <TypeScriptCompile Include="ClientApp\src\services\user.service.ts" />
+        <TypeScriptCompile Include="ClientApp\src\testing\index.ts" />
+        <TypeScriptCompile Include="ClientApp\src\testing\test.utils.ts" />
         <TypeScriptCompile Include="ClientApp\src\utils\cart.utils.ts" />
         <TypeScriptCompile Include="ClientApp\src\utils\language.utils.ts" />
         <TypeScriptCompile Include="ClientApp\src\utils\product-type.utils.ts" />
@@ -198,6 +203,8 @@
         <TypeScriptCompile Include="ClientApp\src\utils\response-handlers\order-response.handler.ts" />
         <TypeScriptCompile Include="ClientApp\src\utils\validation-errors.utils.ts" />
         <TypeScriptCompile Include="ClientApp\src\utils\__tests__\cart.utils.test.ts" />
+        <TypeScriptCompile Include="ClientApp\src\utils\__tests__\currency.utils.test.ts" />
+        <TypeScriptCompile Include="ClientApp\src\utils\__tests__\products.utils.test.ts" />
         <TypeScriptCompile Include="ClientApp\src\validators\comment.validator.ts" />
         <TypeScriptCompile Include="ClientApp\src\validators\index.ts" />
         <TypeScriptCompile Include="ClientApp\src\validators\login.validator.ts" />

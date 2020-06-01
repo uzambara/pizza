@@ -13,6 +13,8 @@ const calcTotalPrice = memoize((cart: CartItemsMap): number => {
 });
 
 function cartItemsMapToArray(cartItemsMap: CartItemsMap): ICartItem[] {
+    if(cartItemsMap == null)
+        return [];
     return Object.values(cartItemsMap);
 }
 

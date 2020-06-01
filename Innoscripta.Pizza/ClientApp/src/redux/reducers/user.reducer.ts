@@ -13,7 +13,7 @@ const initialState: IUserState = {
     statistic: null
 };
 
-export function UserReducer(state: IUserState = initialState, action: UserAction): IUserState {
+export function userReducer(state: IUserState = initialState, action: UserAction): IUserState {
     switch (action.type) {
         case UserActionType.SetUser: {
             return {

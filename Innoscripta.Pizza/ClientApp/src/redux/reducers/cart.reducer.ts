@@ -9,7 +9,7 @@ export interface ICartState {
     items: CartItemsMap
 }
 
-const initialState: ICartState = {
+export const initialState: ICartState = {
     items: LocalStorageService.getItem<CartItemsMap>(localStorageKeys.CART_ITEMS) || {}
 };
 
@@ -40,20 +40,23 @@ export const cartReducer = (state: ICartState = initialState, action: CartAction
         }
         case CartActionType.ChangeItemCount: {
             const {id, diff} = action.payload;
+            let itemForChange: ICartItem = state.items[id];
+            if(!itemForChange)
+                return state;
+
             const items = {...state.items};
-            let itemForChange: ICartItem = {...(items[id])};
             const newCount = itemForChange.count + diff;
             if(newCount < 0) {
                 return state;
             }
             itemForChange.count = newCount;
-            items[id] = itemForChange;
+            items[id] = {...itemForChange};
             LocalStorageService.setItem(localStorageKeys.CART_ITEMS, items);
             return {...state, items};
         }
         case CartActionType.ClearCart:
             return {
-                items: []
+                items: {}
             };
         default:
             return state;

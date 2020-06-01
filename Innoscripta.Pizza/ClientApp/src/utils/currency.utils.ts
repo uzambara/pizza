@@ -19,7 +19,7 @@ function convert(input: number, inputType: CurrencyType, outputType: CurrencyTyp
 function getCurrencyCode(currencyType: CurrencyType) {
     switch (currencyType) {
         case CurrencyType.EUR:
-            return '&#8364';
+            return '&#8364;';
         case CurrencyType.USD:
             return '&#36;'
     }
