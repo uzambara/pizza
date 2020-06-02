@@ -1,16 +1,31 @@
-﻿import {ICartItem} from "../../models";
+﻿import {CartItemsMap} from "../reducers";
+import {ICartItem} from "../../models";
 
 export type CartAction =
     IAddToCart
     | IRemoveItem
     | IChangeItemCount
-    | IClearCart;
+    | IClearCart
+    | ISetCartItemsMap;
 
 export enum CartActionType {
+    SetCartItemsMap = "SET_CART_ITEMS_MAP",
     AddToCart = "ADD_TO_CART",
     RemoveItem = "REMOVE_ITEM",
     ChangeItemCount = "CHANGE_ITEM_COUNT",
     ClearCart = "CLEAR_CART"
+}
+
+export interface ISetCartItemsMap {
+    type: CartActionType.SetCartItemsMap,
+    payload: CartItemsMap
+}
+
+function setCartItemsMap(map: CartItemsMap): ISetCartItemsMap {
+    return {
+        type: CartActionType.SetCartItemsMap,
+        payload: map
+    }
 }
 
 export interface IAddToCart {
@@ -71,5 +86,6 @@ export const cartActions = {
     addToCart,
     removeItem,
     changeItemCount,
-    clearCart
+    clearCart,
+    setCartItemsMap
 };

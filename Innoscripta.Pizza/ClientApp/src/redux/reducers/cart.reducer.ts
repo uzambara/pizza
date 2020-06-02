@@ -2,6 +2,7 @@
 import {ICartItem} from "../../models";
 import {LocalStorageService} from "../../services";
 import {localStorageKeys} from "../../constants";
+import {cartUtils} from "../../utils";
 
 export type CartItemsMap = {[id: number]: ICartItem};
 
@@ -10,11 +11,16 @@ export interface ICartState {
 }
 
 export const initialState: ICartState = {
-    items: LocalStorageService.getItem<CartItemsMap>(localStorageKeys.CART_ITEMS) || {}
+    items: {}
 };
 
 export const cartReducer = (state: ICartState = initialState, action: CartAction): ICartState => {
     switch (action.type) {
+        case CartActionType.SetCartItemsMap: {
+            return {
+                items: action.payload
+            }
+        }
         case CartActionType.AddToCart:
             const newItem = action.payload;
 

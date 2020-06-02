@@ -2,15 +2,18 @@ import React, {useEffect, useState} from "react";
 import {Route, Switch} from "react-router";
 import {Routing} from "./routing";
 import {CartPage, CommentsPage, MainPage, ProfilePage} from "./pages";
-import {PizzaHeader, Toasts} from "./components";
+import {PizzaHeader} from "./components";
 import {useDispatch, useSelector} from "react-redux";
 import {cartSelectors, languageSelectors, productsSelectors} from "./redux/selectors";
 import {productUtils} from "./utils/products.utils";
 import {ProductType} from "./enums";
-import {accountActions, productsActions} from "./redux/actions";
+import {accountActions, cartActions, productsActions} from "./redux/actions";
 import {ToastContainer, Zoom} from "react-toastify";
 import * as styles from "./app.scss";
 import 'react-toastify/dist/ReactToastify.css';
+import {LocalStorageService} from "./services";
+import {CartItemsMap} from "./redux/reducers";
+import {localStorageKeys} from "./constants";
 
 export function App() {
     const [height, setHeightSize] = useState(0);
@@ -25,6 +28,9 @@ export function App() {
     useEffect(() => {
         dispatch(productsActions.fetchProductsRemote());
         dispatch(accountActions.tryAuthenticate());
+
+        const cartItemsMap = LocalStorageService.getItem<CartItemsMap>(localStorageKeys.CART_ITEMS) || {};
+        dispatch(cartActions.setCartItemsMap(cartItemsMap))
     },[]);
 
     return <>

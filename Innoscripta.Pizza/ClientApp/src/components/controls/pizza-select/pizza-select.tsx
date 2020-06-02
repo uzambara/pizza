@@ -11,7 +11,7 @@ export interface IPizzaSelectProps {
     items: ISelectItem[],
     onChange: (value: string | number) => void,
     value: string | number,
-     className?: string
+    className?: string
 }
 
 function PizzaSelectComponent(props: IPizzaSelectProps) {

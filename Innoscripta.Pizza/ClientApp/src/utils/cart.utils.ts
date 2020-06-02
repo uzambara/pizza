@@ -18,7 +18,17 @@ function cartItemsMapToArray(cartItemsMap: CartItemsMap): ICartItem[] {
     return Object.values(cartItemsMap);
 }
 
+function cartItemsArrayToMap(cartItems: ICartItem[]): CartItemsMap {
+    if(!cartItems) {
+        return {};
+    }
+    const result = {};
+    cartItems.forEach(item => {result[item.productId] = item})
+    return result;
+}
+
 export const cartUtils = {
     calcTotalPrice,
-    cartItemsMapToArray
+    cartItemsMapToArray,
+    cartItemsArrayToMap
 };

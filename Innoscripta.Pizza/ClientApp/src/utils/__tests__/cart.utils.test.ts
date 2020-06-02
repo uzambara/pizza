@@ -1,6 +1,7 @@
 import {CartItemsMap} from "../../redux/reducers";
 import {ICartItem} from "../../models";
 import {cartUtils} from "../index";
+import {ProductType} from "../../enums";
 
 describe("cart utils tests", () => {
     it.each([
@@ -82,5 +83,51 @@ describe("cart utils tests", () => {
         // Assert
         expect(Array.isArray(result)).toEqual(true);
         expect(result).toHaveLength(0);
+    });
+
+    it("should return map from array", () => {
+        // Arrange
+        const product1 = {
+            productId: 1,
+            count: 1,
+            imageUrl: "url",
+            productType: ProductType.Pizza,
+            name: "pizza 1",
+            price: 1
+        };
+        const product2 = {
+            productId: 2,
+            count: 1,
+            imageUrl: "url",
+            productType: ProductType.Pizza,
+            name: "pizza 2",
+            price: 1
+        };
+        // Act
+        const result = cartUtils.cartItemsArrayToMap([
+            product1,
+            product2
+        ]);
+
+        // Assert
+        expect(Object.keys(result)).toHaveLength(2);
+        expect(result[1]).toEqual(product1);
+        expect(result[2]).toEqual(product2);
+    });
+
+    it("should return empty object if input array is null", () => {
+        // Act
+        const result = cartUtils.cartItemsArrayToMap(null);
+
+        // Assert
+        expect(result).toEqual({});
+    });
+
+    it("should return empty object if input array empty", () => {
+        // Act
+        const result = cartUtils.cartItemsArrayToMap([]);
+
+        // Assert
+        expect(result).toEqual({});
     });
 });
