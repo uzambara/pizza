@@ -55,12 +55,13 @@ namespace Innoscripta.Pizza.Controllers
         [AllowAnonymous]
         public async Task<AccountRegistrationResponse> Register(AccountRegistrationRequest request)
         {
+            var inputPassword = request.Password;
             request.Password = _hashService.HashPassword(request.Password);
             var result = await _userService.RegisterUserAsync(request);
             await Login(new AccountLoginRequest()
             {
                 Phone = request.Phone,
-                Password = request.Password
+                Password = inputPassword
             });
             return result;
         }
