@@ -25,7 +25,7 @@ export const englishStrings: IContentStrings = {
             Comments: "Comments",
             Drinks: "Drinks",
             Pizza: "Hot pizza",
-            Profile: "Profle"
+            Profile: "Profile"
         }
     },
     Pages: {
