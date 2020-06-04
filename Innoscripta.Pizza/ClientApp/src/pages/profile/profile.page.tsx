@@ -12,8 +12,10 @@ function ProfilePageComponent(props) {
     const {statistic, currentUser, orderHistory} = useSelector(userSelectors.selectUserState);
 
     useEffect(() => {
-        dispatch(userActions.getOrderHistoryRemote());
-        dispatch(userActions.getStatisticRemote());
+        if(currentUser) {
+            dispatch(userActions.getOrderHistoryRemote());
+            dispatch(userActions.getStatisticRemote());
+        }
     }, []);
     if(!currentUser)
         return <PizzaUnauthorizedMsg/>;
