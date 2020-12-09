@@ -1,7 +1,7 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
-namespace Innoscripta.Pizza.Authorization
+namespace Innoscripta.Pizza.Authentication
 {
     public class AuthOptions
     {

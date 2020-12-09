@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,6 +32,7 @@ namespace Innoscripta.Pizza.Configuration.AppBuilderConfiguration
                         context.Features.Get<IExceptionHandlerFeature>();
 
                     logger.LogError(exceptionHandlerFeature.Error, "UNHANDLED APP EXCEPTION");
+                    Console.WriteLine(exceptionHandlerFeature.Error);
                     await context.Response.WriteAsync(exceptionHandlerFeature.Error.ToString());
                 });
             });

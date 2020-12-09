@@ -58,7 +58,9 @@ namespace Innoscripta.Pizza
             {
                 spa.Options.SourcePath = "ClientApp";
             });
-            Console.WriteLine("Service started on https://localhost:5001 http://localhost:5000");
+
+            app.UseDatabaseConfiguration();
+            Console.WriteLine("Service started on https://localhost:5001 http://localhost:5000!!!!");
         }
     }
 }

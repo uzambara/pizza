@@ -1,4 +1,5 @@
 ﻿using Innoscripta.Pizza.Data;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +17,17 @@ namespace Innoscripta.Pizza.Configuration.ServiceCollectionConfiguration
                     builder.UseRelationalNulls(true);
                 });
             });
+        }
+
+        public static IApplicationBuilder UseDatabaseConfiguration(this IApplicationBuilder builder)
+        {
+            using var serviceScope = builder.ApplicationServices
+                .GetRequiredService<IServiceScopeFactory>()
+                .CreateScope();
+            using var context = serviceScope.ServiceProvider.GetService<PizzaDbContext>();
+            context.Database.Migrate();
+
+            return builder;
         }
     }
 }

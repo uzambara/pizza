@@ -6,7 +6,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using Innoscripta.Pizza.Authorization;
 using Innoscripta.Pizza.Contracts;
 using Innoscripta.Pizza.Contracts.Account;
 using Innoscripta.Pizza.Data.Domain;
@@ -113,8 +112,8 @@ namespace Innoscripta.Pizza.Controllers
                 new Claim(ClaimsIdentity.DefaultNameClaimType, user.Phone)
             };
 
-            var id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
-            return new ClaimsPrincipal(id);
+            var id = new ClaimsIdentity(claims, "ApplicationCookie");
+            return new ClaimsPrincipal(new [] {id});
         }
     }
 }
