@@ -14,7 +14,7 @@ namespace Innoscripta.Pizza.Data.Configuration
             {
                 new ProductEntity()
                 {
-                    Id = 1,
+                    Id = -1,
                     DescriptionEng = "<b>Ingredients:</b> pizza sauce, Mozzarella and Parmesan cheeses, champignons, bacon, pepperoni sausage, tomatoes, chicken breast, garlic, red onion, greens.",
                     DescriptionRu = "<b>Состав</b> пицца-соус, сыры «Моцарелла» и «Пармезан», шампиньоны, бекон, колбаса пепперони, помидоры, куриная грудка, чеснок, лук красный, зелень.",
                     Img = "/images/pizzas/pizzaman.png",
@@ -25,7 +25,7 @@ namespace Innoscripta.Pizza.Data.Configuration
                 },
                 new ProductEntity()
                 {
-                    Id = 2,
+                    Id = -2,
                     DescriptionEng = "<b>Ingredients:</b> pizza sauce, Mozzarella cheese, pepperoni sausage, champignons.",
                     DescriptionRu = "<b>Состав</b> пицца-соус, сыр «Моцарелла», колбаса пепперони, шампиньоны.",
                     Img = "/images/pizzas/pepperoni.png",
@@ -36,7 +36,7 @@ namespace Innoscripta.Pizza.Data.Configuration
                 },
                 new ProductEntity()
                 {
-                    Id = 3,
+                    Id = -3,
                     DescriptionEng = "<b>Ingredients:</b> pizza sauce, mozzarella cheese, ham, pineapple.",
                     DescriptionRu = "<b>Состав</b> пицца-соус, сыр «Моцарелла», ветчина, ананасы.",
                     Img = "/images/pizzas/hawaiian.png",
@@ -47,7 +47,7 @@ namespace Innoscripta.Pizza.Data.Configuration
                 },
                 new ProductEntity()
                 {
-                    Id = 4,
+                    Id = -4,
                     DescriptionEng = "<b>Ingredients:</b> pizza sauce, mozzarella cheese, tomatoes.",
                     DescriptionRu = "<b>Состав</b> пицца-соус, сыр «Моцарелла», помидоры.",
                     Img = "/images/pizzas/margarita.png",
@@ -58,7 +58,7 @@ namespace Innoscripta.Pizza.Data.Configuration
                 },
                 new ProductEntity()
                 {
-                    Id = 5,
+                    Id = -5,
                     DescriptionEng = "<b>Ingredients:</b> pizza sauce, mozzarella and parmesan cheeses, ham, mushrooms, pepperoni, jalapenos.",
                     DescriptionRu = "<b>Состав</b> пицца-соус, сыры «Моцарелла» и «Пармезан», ветчина, шампиньоны, колбаса пепперони, перец халапеньо.",
                     Img = "/images/pizzas/dragon.png",
@@ -69,7 +69,7 @@ namespace Innoscripta.Pizza.Data.Configuration
                 },
                 new ProductEntity()
                 {
-                    Id = 6,
+                    Id = -6,
                     DescriptionEng = "<b>Ingredients:</b> mustard sauce, Mozzarella cheese, chicken breast, red onion, mushrooms, garlic.",
                     DescriptionRu = "<b>Состав</b> соус «Горчичный», сыр «Моцарелла» куриная грудка, лук красный, шампиньоны, чеснок.",
                     Img = "/images/pizzas/chicken-julienne.png",
@@ -80,7 +80,7 @@ namespace Innoscripta.Pizza.Data.Configuration
                 },
                 new ProductEntity()
                 {
-                    Id = 7,
+                    Id = -7,
                     DescriptionEng = "<b>Ingredients:</b> pizza sauce, Mozzarella, Parmesan, Cheddar cheeses, blue noble cheese.",
                     DescriptionRu = "<b>Состав</b> пицца-соус, сыры «Моцарелла», «Пармезан», «Чеддер», сыр с голубой благородной плесенью.",
                     Img = "/images/pizzas/four-cheeses.png",
@@ -92,7 +92,7 @@ namespace Innoscripta.Pizza.Data.Configuration
 
                 new ProductEntity()
                 {
-                    Id = 8,
+                    Id = -8,
                     DescriptionEng = null,
                     DescriptionRu = null,
                     Img = "/images/drinks/coca-cola.png",
@@ -103,7 +103,7 @@ namespace Innoscripta.Pizza.Data.Configuration
                 },
                 new ProductEntity()
                 {
-                    Id = 9,
+                    Id = -9,
                     DescriptionEng = null,
                     DescriptionRu = null,
                     Img = "/images/drinks/fanta.png",
@@ -114,7 +114,7 @@ namespace Innoscripta.Pizza.Data.Configuration
                 },
                 new ProductEntity()
                 {
-                    Id = 10,
+                    Id = -10,
                     DescriptionEng = null,
                     DescriptionRu = null,
                     Img = "/images/drinks/cranberry-juice.png",
@@ -125,7 +125,7 @@ namespace Innoscripta.Pizza.Data.Configuration
                 },
                 new ProductEntity()
                 {
-                    Id = 11,
+                    Id = -11,
                     DescriptionEng = "",
                     DescriptionRu = null,
                     Img = "/images/drinks/bon-aqua.png",

@@ -56,7 +56,7 @@ namespace Innoscripta.Pizza
 
             app.UseSpa(spa =>
             {
-                spa.Options.SourcePath = "ClientApp";
+                spa.Options.SourcePath = "ClientApp/build";
             });
 
             app.UseDatabaseConfiguration();

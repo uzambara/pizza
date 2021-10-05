@@ -17,7 +17,7 @@ namespace Innoscripta.Pizza.Data.Configuration
              {
                  new UserEntity()
                  {
-                     Id = 1,
+                     Id = -1,
                      Name = "Vasiliy",
                      Password = hashService.HashPassword("123"),
                      LastName = "Pupkin",
@@ -26,7 +26,7 @@ namespace Innoscripta.Pizza.Data.Configuration
                  },
                  new UserEntity()
                  {
-                     Id = 2,
+                     Id = -2,
                      Name = "Mariya",
                      Password = hashService.HashPassword("123"),
                      LastName = "Ivanova",
@@ -35,7 +35,7 @@ namespace Innoscripta.Pizza.Data.Configuration
                  },
                  new UserEntity()
                  {
-                     Id = 3,
+                     Id = -3,
                      Name = "Petr",
                      Password = hashService.HashPassword("123"),
                      LastName = "Levin",
@@ -44,7 +44,7 @@ namespace Innoscripta.Pizza.Data.Configuration
                  },
                  new UserEntity()
                  {
-                     Id = 4,
+                     Id = -4,
                      Name = "Ivan",
                      Password = hashService.HashPassword("123"),
                      LastName = "Bikov",
